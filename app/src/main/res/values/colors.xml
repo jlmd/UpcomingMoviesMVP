@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="list_title_text_color" type="color">#616161</item>
+    <item name="list_release_date_text_color" type="color">#BDBDBD</item>
+    <item name="list_background_color" type="color">#F5F5F5</item>
+
+</resources>
