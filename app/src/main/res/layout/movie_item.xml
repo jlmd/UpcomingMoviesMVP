@@ -11,7 +11,7 @@
         android:layout_gravity="center"
         android:layout_height="200dp"
         android:layout_margin="5dp"
-        card_view:cardCornerRadius="12dp">
+        card_view:cardCornerRadius="6dp">
 
         <LinearLayout
             android:paddingTop="10dp"
@@ -33,10 +33,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="6"
                 android:paddingStart="20dp"
-                android:paddingEnd="20dp">
+                android:paddingEnd="20dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
 
                 <TextView
-                    android:paddingTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/movieTitle"
@@ -44,13 +45,23 @@
                     android:textColor="@color/list_title_text_color"/>
 
                 <TextView
-                    android:paddingTop="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/movieTitle"
+                    android:paddingTop="5dp"
+                    android:layout_below="@id/movieTitle"
+                    android:id="@+id/movieRating"
+                    android:textSize="12sp"
+                    android:textColor="@color/list_rating_color"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
                     android:id="@+id/movieReleaseDate"
                     android:textSize="12sp"
-                    android:textColor="@color/list_title_text_color"/>
+                    android:textColor="@color/list_release_date_text_color"/>
 
             </RelativeLayout>
 

@@ -26,6 +26,8 @@ public class MoviesListAdapter extends BaseAdapter {
     private List<Movie> movies = Collections.emptyList();
     private final Context context;
     private static final String RELEASE_DATE_FORMAT = "dd-MM-yyyy";
+    private static final String RATING_SEPARATOR = "/";
+    private static final String RATING_MAX_VALUE = "10";
 
     public MoviesListAdapter(Context context) {
         this.context = context;
@@ -73,10 +75,16 @@ public class MoviesListAdapter extends BaseAdapter {
     }
 
     private void renderMovieView(Movie movie, ViewHolder viewHolder) {
-        viewHolder.movieTitle.setText(movie.getTitle());
         Picasso.with(context)
                 .load(movie.getPosterImgUrl())
                 .into(viewHolder.posterImage);
+
+        if (movie.getVoteCount() > 0) {
+            viewHolder.movieRating.setText(movie.getVoteAverage() + RATING_SEPARATOR +
+                    RATING_MAX_VALUE);
+        }
+
+        viewHolder.movieTitle.setText(movie.getTitle());
         viewHolder.movieReleaseDate.setText(DateFormat.format(RELEASE_DATE_FORMAT,
                 movie.getReleaseDate()));
     }
@@ -87,6 +95,9 @@ public class MoviesListAdapter extends BaseAdapter {
 
         @InjectView(R.id.movieTitle)
         protected TextView movieTitle;
+
+        @InjectView(R.id.movieRating)
+        protected TextView movieRating;
 
         @InjectView(R.id.movieReleaseDate)
         protected TextView movieReleaseDate;
