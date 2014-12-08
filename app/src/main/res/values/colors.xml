@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <item name="primary_color" type="color">#00C853</item>
+
+    <!-- Upcoming movies list -->
     <item name="list_title_text_color" type="color">#424242</item>
     <item name="list_rating_color" type="color">#BDBDBD</item>
-    <item name="list_release_date_text_color" type="color">#9E9E9E</item>
+    <item name="list_release_date_text_color" type="color">#FBC02D</item>
     <item name="list_background_color" type="color">#E0E0E0</item>
+
+    <!-- Order float button -->
+    <item name="float_button_primary" type="color">#00E676</item>
+    <item name="float_button_primary_pressed" type="color">#76FF03</item>
+    <item name="float_button_ripple" type="color">#C6FF00</item>
 
 </resources>

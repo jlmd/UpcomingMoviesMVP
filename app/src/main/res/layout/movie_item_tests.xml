@@ -3,7 +3,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="200dp"
+    >
 
         <LinearLayout
             android:paddingTop="10dp"
@@ -56,6 +57,7 @@
                     android:id="@+id/movieReleaseDate"
                     android:text="20-10-2015"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     android:textColor="@color/list_release_date_text_color"/>
 
             </RelativeLayout>

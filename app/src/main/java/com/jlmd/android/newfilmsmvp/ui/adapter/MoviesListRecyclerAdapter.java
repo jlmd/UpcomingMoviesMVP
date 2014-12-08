@@ -1,11 +1,11 @@
 package com.jlmd.android.newfilmsmvp.ui.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +21,7 @@ import butterknife.InjectView;
 /**
  * @author jlmd
  */
-public class MoviesListAdapter extends BaseAdapter {
+public class MoviesListRecyclerAdapter extends RecyclerView.Adapter<MoviesListRecyclerAdapter.ViewHolder> {
 
     private List<Movie> movies = Collections.emptyList();
     private final Context context;
@@ -29,7 +29,7 @@ public class MoviesListAdapter extends BaseAdapter {
     private static final String RATING_SEPARATOR = "/";
     private static final String RATING_MAX_VALUE = "10";
 
-    public MoviesListAdapter(Context context) {
+    public MoviesListRecyclerAdapter(Context context) {
         this.context = context;
     }
 
@@ -39,39 +39,21 @@ public class MoviesListAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
-        return movies.size();
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View modelView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.movie_item,
+                viewGroup, false);
+        return new ViewHolder(modelView);
     }
 
     @Override
-    public Object getItem(int position) {
-        return movies.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
-
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        final ViewHolder viewHolder;
-
-        if (convertView == null) {
-            convertView = LayoutInflater.from(context)
-                    .inflate(R.layout.movie_item, parent, false);
-            viewHolder = new ViewHolder(convertView);
-            convertView.setTag(viewHolder);
-        } else {
-            viewHolder = (ViewHolder) convertView.getTag();
-        }
-
-        Movie movie = (Movie) getItem(position);
-
+    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+        Movie movie = movies.get(i);
         renderMovieView(movie, viewHolder);
+    }
 
-        return convertView;
+    @Override
+    public int getItemCount() {
+        return movies.size();
     }
 
     private void renderMovieView(Movie movie, ViewHolder viewHolder) {
@@ -86,10 +68,10 @@ public class MoviesListAdapter extends BaseAdapter {
 
         viewHolder.movieTitle.setText(movie.getTitle());
         viewHolder.movieReleaseDate.setText(DateFormat.format(RELEASE_DATE_FORMAT,
-                movie.getReleaseDate()));
+                movie.getReleaseDate()).toString());
     }
 
-    protected static class ViewHolder extends BaseViewHolder {
+    public class ViewHolder extends BaseRecyclerViewHolder {
         @InjectView(R.id.moviePosterImage)
         protected ImageView posterImage;
 

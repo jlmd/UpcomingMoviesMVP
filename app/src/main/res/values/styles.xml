@@ -1,8 +1,24 @@
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/AppTheme_ActionBar</item>
+        <item name="android:actionBarSize">@dimen/action_bar_height</item>
+        <item name="android:actionOverflowButtonStyle">@style/AppTheme_ActionBar_Overflow</item>
+        <item name="android:windowContentOverlay">@drawable/actionbar_shadow</item>
+    </style>
+
+    <style name="AppTheme_ActionBar" parent="android:Widget.Holo.ActionBar.Solid">
+        <item name="android:icon">@drawable/actionbar_icon_placeholder_compat</item>
+        <item name="android:titleTextStyle">@style/AppTheme_ActionBar_Title</item>
+        <item name="android:background">@color/primary_color</item>
+    </style>
+
+    <style name="AppTheme_ActionBar_Title" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="AppTheme_ActionBar_Overflow" parent="android:Widget.ActionButton.Overflow">
     </style>
 
 </resources>

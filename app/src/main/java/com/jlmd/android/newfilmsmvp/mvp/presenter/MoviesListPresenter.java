@@ -52,7 +52,6 @@ public class MoviesListPresenter extends Presenter<MoviesListView> {
                 view.hideLoading();
             }
         });
-
     }
 
     private void showMovies(List<Movie> movies) {
