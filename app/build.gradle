@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion "19.1.0"
+    compileSdkVersion 21
+    buildToolsVersion "21.0.1"
 
     defaultConfig {
         applicationId "com.jlmd.android.newfilmsmvp"
         minSdkVersion 15
-        targetSdkVersion 20
+        targetSdkVersion 21
         versionCode 1
         versionName "1.0"
     }
@@ -34,4 +34,5 @@ dependencies {
     compile 'com.android.support:support-v4:21.0.2'
     compile 'com.android.support:recyclerview-v7:21.0.2'
     compile 'com.melnykov:floatingactionbutton:1.1.0'
+    compile 'com.android.support:appcompat-v7:21+'
 }

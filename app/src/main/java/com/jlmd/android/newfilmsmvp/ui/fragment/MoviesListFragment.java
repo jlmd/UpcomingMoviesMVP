@@ -21,6 +21,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 /**
  * @author jlmd
@@ -37,12 +38,14 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
     protected FloatingActionButton sortButton;
 
     private MoviesListRecyclerAdapter moviesListAdapter;
+    private boolean sortedByTitle;
     private static final String TAG = MoviesListFragment.class.getName();
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initMoviesRecyclerView();
+        attachSortButtonToRecycler();
         initPresenter();
     }
 
@@ -51,14 +54,26 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
         moviesListPresenter.initialize();
     }
 
+    private void attachSortButtonToRecycler() {
+        sortButton.attachToRecyclerView(moviesListView);
+    }
+
     private void initMoviesRecyclerView() {
         moviesListView.setLayoutManager(new LinearLayoutManager(getActivity()
                 .getApplicationContext()));
         moviesListView.setItemAnimator(new DefaultItemAnimator());
         moviesListAdapter = new MoviesListRecyclerAdapter(getActivity().getApplicationContext());
         moviesListView.setAdapter(moviesListAdapter);
+    }
 
-        sortButton.attachToRecyclerView(moviesListView);
+    @OnClick(R.id.sortButton)
+    protected void onSortButtonClick() {
+        if (sortedByTitle) {
+            moviesListPresenter.sortMoviesByDate();
+        } else {
+            moviesListPresenter.sortMoviesByTitle();
+        }
+        sortedByTitle = !sortedByTitle;
     }
 
     @Override
@@ -79,7 +94,6 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
 
     @Override
     public void renderMovies(List<Movie> movies) {
-        Log.i(TAG, "Movies loaded: " + movies);
         moviesListAdapter.updateItems(movies);
     }
 }
