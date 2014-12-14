@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +37,6 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
     protected FloatingActionButton sortButton;
 
     private MoviesListRecyclerAdapter moviesListAdapter;
-    private boolean sortedByTitle;
     private static final String TAG = MoviesListFragment.class.getName();
 
     @Override
@@ -68,12 +66,7 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
 
     @OnClick(R.id.sortButton)
     protected void onSortButtonClick() {
-        if (sortedByTitle) {
-            moviesListPresenter.sortMoviesByDate();
-        } else {
-            moviesListPresenter.sortMoviesByTitle();
-        }
-        sortedByTitle = !sortedByTitle;
+        moviesListPresenter.onSortButtonClick();
     }
 
     @Override

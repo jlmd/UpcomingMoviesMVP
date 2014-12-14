@@ -18,8 +18,8 @@ import java.util.List;
  */
 public class MockedUpcomingMoviesApi implements UpcomingMoviesApi {
 
-    private Mapper upcomingMoviesApiMapper;
     private Gson gson;
+    private final Mapper upcomingMoviesApiMapper;
     private final Context context;
 
     private static final String FILE_NAME = "upcomingmovies_mocked.json";

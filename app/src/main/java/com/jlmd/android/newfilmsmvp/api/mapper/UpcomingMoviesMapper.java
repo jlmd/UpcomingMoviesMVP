@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author jlmd
  */
-public class UpcomingMoviesApiMapper implements Mapper<UpcomingMoviesResult, List<Movie>> {
+public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<Movie>> {
 
     private static final String IMAGE_URL = "http://image.tmdb.org/t/p/w185";
 
@@ -40,6 +40,7 @@ public class UpcomingMoviesApiMapper implements Mapper<UpcomingMoviesResult, Lis
         movie.setVoteAverage(result.getVoteAverage());
         movie.setVoteCount(result.getVoteCount());
         movie.setPopularity(result.getPopularity());
+        movie.setId(result.getId());
 
         return movie;
     }

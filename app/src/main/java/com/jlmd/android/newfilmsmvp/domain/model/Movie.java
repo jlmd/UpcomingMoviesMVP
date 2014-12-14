@@ -6,6 +6,7 @@ import java.util.Date;
  * @author jlmd
  */
 public class Movie {
+    private int id;
     private String title;
     private String posterImgUrl;
     private String backdropImgUrl;
@@ -14,6 +15,7 @@ public class Movie {
     private Double voteAverage;
     private float voteCount;
     private double popularity;
+    private MovieDetails movieDetails;
 
     public String getTitle() {
         return title;
@@ -77,5 +79,21 @@ public class Movie {
 
     public void setPopularity(double popularity) {
         this.popularity = popularity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public MovieDetails getMovieDetails() {
+        return movieDetails;
+    }
+
+    public void setMovieDetails(MovieDetails movieDetails) {
+        this.movieDetails = movieDetails;
     }
 }

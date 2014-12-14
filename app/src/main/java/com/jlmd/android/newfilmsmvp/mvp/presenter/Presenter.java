@@ -15,11 +15,11 @@ public abstract class Presenter<T extends View> {
         this.view = view;
     }
 
-    protected abstract void initialize();
+    public abstract void initialize();
 
-    protected abstract void resume();
+    public abstract void resume();
 
-    protected abstract void pause();
+    public abstract void pause();
 
-    protected abstract void destroy();
+    public abstract void destroy();
 }
