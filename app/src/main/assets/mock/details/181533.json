@@ -1,0 +1,74 @@
+{
+    "adult": false,
+    "backdrop_path": "/73hI1zgRALUDrB46JDPBLFqHcqv.jpg",
+    "belongs_to_collection": {
+        "id": 85943,
+        "name": "Night at the Museum Collection",
+        "poster_path": "/1FOt56wB41Z6auT2vvhtHoOenUI.jpg",
+        "backdrop_path": "/fOmqiIXfJmeANciOTCN6WkKbwK.jpg"
+    },
+    "budget": 0,
+    "genres": [
+        {
+            "id": 12,
+            "name": "Adventure"
+        },
+        {
+            "id": 35,
+            "name": "Comedy"
+        },
+        {
+            "id": 14,
+            "name": "Fantasy"
+        },
+        {
+            "id": 10751,
+            "name": "Family"
+        }
+    ],
+    "homepage": "",
+    "id": 181533,
+    "imdb_id": "tt2692250",
+    "original_title": "Night at the Museum: Secret of the Tomb",
+    "overview": "When the magic powers of The Tablet of Ahkmenrah begin to die out, Larry Daley (Ben Stiller) spans the globe, uniting favorite and new characters while embarking on an epic quest to save the magic before it is gone forever.",
+    "popularity": 6.41408113516504,
+    "poster_path": "/tWwASv4CU1Au1IukacdSUewDCV3.jpg",
+    "production_companies": [
+        {
+            "name": "1492 Pictures",
+            "id": 436
+        },
+        {
+            "name": "21 Laps Entertainment",
+            "id": 2575
+        },
+        {
+            "name": "Twentieth Century Fox",
+            "id": 7392
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "GB",
+            "name": "United Kingdom"
+        },
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "2014-12-19",
+    "revenue": 0,
+    "runtime": 97,
+    "spoken_languages": [
+        {
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "",
+    "title": "Night at the Museum: Secret of the Tomb",
+    "vote_average": 7.2,
+    "vote_count": 14
+}

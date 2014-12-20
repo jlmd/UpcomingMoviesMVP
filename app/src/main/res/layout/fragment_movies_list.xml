@@ -5,17 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
+    <com.jlmd.android.newfilmsmvp.ui.view.ClickRecyclerView
+        android:id="@+id/rv_movies_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/moviesListView"
         android:layout_marginTop="3dp"
         android:dividerHeight="0dp"
         android:divider="@null"
         android:background="@color/list_background_color"/>
 
     <com.melnykov.fab.FloatingActionButton
-        android:id="@+id/sortButton"
+        android:id="@+id/btn_sort_items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"

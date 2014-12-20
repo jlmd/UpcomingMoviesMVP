@@ -1,0 +1,48 @@
+{
+    "adult": false,
+    "backdrop_path": null,
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+        {
+            "id": 12,
+            "name": "Adventure"
+        },
+        {
+            "id": 10402,
+            "name": "Music"
+        },
+        {
+            "id": 10751,
+            "name": "Family"
+        }
+    ],
+    "homepage": "http://www.nbc.com/peter-pan-live",
+    "id": 290300,
+    "imdb_id": "tt3972398",
+    "original_title": "Peter Pan Live",
+    "overview": "Preparing to sprinkle fairy dust across America, NBC presents a bold new LIVE television production of the classic Broadway musical that will gather friends, families and anyone who refuses to ever grow up.  Following in the footsteps of the phenomenally successful The Sound of Music LIVE! - which drew over 18 million viewers - comes this musical masterpiece that tells the beloved story of Peter Pan, the mischievous little boy who ran away to Neverland. Get ready for show-stopping stars, stunning costumes, extravagant sets and delightful music that will have everyone in your home singing along.  From Executive Producers Craig Zadan and Neil Meron comes a soaring holiday event guaranteed to take viewers on a magical and musical journey to the second star to the right.",
+    "popularity": 0.532464527974747,
+    "poster_path": "/3Xu4mgGrk2RYRRVqk4WqJKwvYi0.jpg",
+    "production_companies": [
+        {
+            "name": "NBC Universal Television",
+            "id": 1902
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "2014-12-04",
+    "revenue": 0,
+    "runtime": 132,
+    "spoken_languages": [],
+    "status": "Released",
+    "tagline": "",
+    "title": "Peter Pan Live",
+    "vote_average": 0,
+    "vote_count": 0
+}

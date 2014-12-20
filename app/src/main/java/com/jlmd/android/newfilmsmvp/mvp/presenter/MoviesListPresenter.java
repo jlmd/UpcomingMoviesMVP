@@ -10,5 +10,5 @@ public abstract class MoviesListPresenter extends Presenter<MoviesListView> {
 
     public abstract void onSortButtonClick();
 
-    public abstract void onMovieSelected(Movie movie);
+    public abstract void onItemSelected(int position);
 }

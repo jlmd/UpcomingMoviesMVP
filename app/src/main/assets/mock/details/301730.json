@@ -1,0 +1,40 @@
+{
+    "adult": false,
+    "backdrop_path": null,
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+        {
+            "id": 28,
+            "name": "Action"
+        }
+    ],
+    "homepage": "",
+    "id": 301730,
+    "imdb_id": "tt3816614",
+    "original_title": "Turkey Shoot",
+    "overview": "In the wake of a shocking civilian massacre in a foreign war zone, disgraced Navy SEAL Rick Tyler is sentenced to rot in a maximum security military prison until he is offered the opportunity to put his life on the line to win his freedom. A one-man force of nature, Tyler will have to take-on and take-down some of the world's most ruthless killers in some of the world's most brutal locations to win the game, obtain his freedom and find out why he was set up. The question is, can he accomplish all of this before Game On is Game Over?",
+    "popularity": 0.27177766542823,
+    "poster_path": "/3STw6T0Ed38kQzqn22dBmd47WhA.jpg",
+    "production_companies": [],
+    "production_countries": [
+        {
+            "iso_3166_1": "AU",
+            "name": "Australia"
+        }
+    ],
+    "release_date": "2014-12-04",
+    "revenue": 0,
+    "runtime": 90,
+    "spoken_languages": [
+        {
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "It's live. With death.",
+    "title": "Turkey Shoot",
+    "vote_average": 0,
+    "vote_count": 0
+}

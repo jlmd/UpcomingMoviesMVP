@@ -1,0 +1,61 @@
+{
+    "adult": false,
+    "backdrop_path": "/ypqnT2CYXWx8Kq3FWJmiBTHCPtv.jpg",
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+        {
+            "id": 80,
+            "name": "Crime"
+        },
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 9648,
+            "name": "Mystery"
+        },
+        {
+            "id": 10749,
+            "name": "Romance"
+        }
+    ],
+    "homepage": "",
+    "id": 171274,
+    "imdb_id": "tt1791528",
+    "original_title": "Inherent Vice",
+    "overview": "In Los Angeles at the turn of the 1970s, drug-fueled detective Larry \"Doc\" Sportello investigates the disappearance of an ex-girlfriend.",
+    "popularity": 3.81869614200337,
+    "poster_path": "/hS4dIhMOspeJJIh6Vat3Z0emZpI.jpg",
+    "production_companies": [
+        {
+            "name": "Ghoulardi Film Company",
+            "id": 178
+        },
+        {
+            "name": "Warner Bros.",
+            "id": 6194
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "2014-12-12",
+    "revenue": 0,
+    "runtime": 148,
+    "spoken_languages": [
+        {
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Post Production",
+    "tagline": "Under the paving stones, the beach!",
+    "title": "Inherent Vice",
+    "vote_average": 7.1,
+    "vote_count": 5
+}

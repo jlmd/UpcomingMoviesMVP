@@ -10,7 +10,7 @@ import retrofit.http.Query;
  * @author jlmd
  */
 public interface UpcomingMoviesService {
-    @GET("/upcoming")
+    @GET("/mock/upcoming")
     void getUpcomingMovies(@Query("api_key") String apiKey,
                            Callback<UpcomingMoviesResult> callback);
 }

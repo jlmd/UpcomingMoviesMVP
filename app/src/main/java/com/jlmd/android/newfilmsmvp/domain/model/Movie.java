@@ -1,11 +1,14 @@
 package com.jlmd.android.newfilmsmvp.domain.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.Date;
 
 /**
  * @author jlmd
  */
-public class Movie {
+public class Movie implements Parcelable {
     private int id;
     private String title;
     private String posterImgUrl;
@@ -16,6 +19,24 @@ public class Movie {
     private float voteCount;
     private double popularity;
     private MovieDetails movieDetails;
+
+    public Movie() {
+        // Empty constructor
+    }
+
+    protected Movie(Parcel in) {
+        id = in.readInt();
+        title = in.readString();
+        posterImgUrl = in.readString();
+        backdropImgUrl = in.readString();
+        long tmpReleaseDate = in.readLong();
+        releaseDate = tmpReleaseDate != -1 ? new Date(tmpReleaseDate) : null;
+        adult = in.readByte() != 0x00;
+        voteAverage = in.readByte() == 0x00 ? null : in.readDouble();
+        voteCount = in.readFloat();
+        popularity = in.readDouble();
+        movieDetails = (MovieDetails) in.readValue(MovieDetails.class.getClassLoader());
+    }
 
     public String getTitle() {
         return title;
@@ -96,4 +117,41 @@ public class Movie {
     public void setMovieDetails(MovieDetails movieDetails) {
         this.movieDetails = movieDetails;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(title);
+        dest.writeString(posterImgUrl);
+        dest.writeString(backdropImgUrl);
+        dest.writeLong(releaseDate != null ? releaseDate.getTime() : -1L);
+        dest.writeByte((byte) (adult ? 0x01 : 0x00));
+        if (voteAverage == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeDouble(voteAverage);
+        }
+        dest.writeFloat(voteCount);
+        dest.writeDouble(popularity);
+        dest.writeValue(movieDetails);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }

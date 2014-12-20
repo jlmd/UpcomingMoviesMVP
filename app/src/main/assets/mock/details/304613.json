@@ -1,0 +1,40 @@
+{
+    "adult": false,
+    "backdrop_path": null,
+    "belongs_to_collection": null,
+    "budget": 1,
+    "genres": [
+        {
+            "id": 27,
+            "name": "Horror"
+        }
+    ],
+    "homepage": "http://charliesfarm.com.au/",
+    "id": 304613,
+    "imdb_id": "tt3317874",
+    "original_title": "Charlie's Farm",
+    "overview": "In an effort to do something different, four friends head into Australia's outback to explore Charlie's Farm, the site where a violent family met their end at the hands of an angry mob. Despite all warnings, they persist in their horror-seeking adventure.",
+    "popularity": 0.306289054165004,
+    "poster_path": "/gom7H8KHYIS9AimXKilXlNqnMLl.jpg",
+    "production_companies": [
+        {
+            "name": "Slaughter FX",
+            "id": 24650
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "AU",
+            "name": "Australia"
+        }
+    ],
+    "release_date": "2014-12-04",
+    "revenue": 0,
+    "runtime": 93,
+    "spoken_languages": [],
+    "status": "Released",
+    "tagline": "The violent history of Charlie's Farm is brought brutally to life when four horror seeking youths stumble across a legend that refuses to die.",
+    "title": "Charlie's Farm",
+    "vote_average": 6.5,
+    "vote_count": 1
+}

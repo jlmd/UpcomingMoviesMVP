@@ -17,7 +17,9 @@ import java.util.List;
  */
 public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<Movie>> {
 
-    private static final String IMAGE_URL = "http://image.tmdb.org/t/p/w185";
+    private static final String IMAGE_URL= "http://image.tmdb.org/t/p/w";
+    private static final int POSTER_WIDTH = 185;
+    private static final int BACKROP_WIDTH = 500;
 
     @Override
     public List<Movie> map(UpcomingMoviesResult upcomingMoviesResult) {
@@ -33,8 +35,9 @@ public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<M
     private Movie mapMovie(Result result) {
         Movie movie = new Movie();
         movie.setTitle(result.getTitle());
-        movie.setPosterImgUrl(createAbsoluteImgURL(result.getPosterPath()));
-        movie.setBackdropImgUrl(createAbsoluteImgURL((String) result.getBackdropPath()));
+        movie.setPosterImgUrl(createAbsoluteImgURL(result.getPosterPath(), POSTER_WIDTH));
+        movie.setBackdropImgUrl(createAbsoluteImgURL((String) result.getBackdropPath(),
+                BACKROP_WIDTH));
         movie.setReleaseDate(parseReleaseDate(result.getReleaseDate()));
         movie.setAdult(result.getAdult());
         movie.setVoteAverage(result.getVoteAverage());
@@ -54,7 +57,7 @@ public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<M
         }
     }
 
-    private String createAbsoluteImgURL(String relativeImgURL) {
-        return IMAGE_URL + relativeImgURL;
+    private String createAbsoluteImgURL(String relativeImgURL, int width) {
+        return width + IMAGE_URL + relativeImgURL;
     }
 }

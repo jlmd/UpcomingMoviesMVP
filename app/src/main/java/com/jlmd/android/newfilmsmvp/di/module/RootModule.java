@@ -3,9 +3,12 @@ package com.jlmd.android.newfilmsmvp.di.module;
 import android.content.Context;
 
 import com.jlmd.android.newfilmsmvp.di.AppApplication;
+import com.jlmd.android.newfilmsmvp.mvp.presenter.MovieDetailsPresenterImp;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MoviesListPresenterImp;
 import com.jlmd.android.newfilmsmvp.ui.activity.MainActivity;
+import com.jlmd.android.newfilmsmvp.ui.fragment.MovieDetailsFragment;
 import com.jlmd.android.newfilmsmvp.ui.fragment.MoviesListFragment;
+import com.squareup.otto.Bus;
 
 import javax.inject.Singleton;
 
@@ -25,7 +28,9 @@ import dagger.Provides;
                 AppApplication.class,
                 MainActivity.class,
                 MoviesListFragment.class,
-                MoviesListPresenterImp.class
+                MoviesListPresenterImp.class,
+                MovieDetailsFragment.class,
+                MovieDetailsPresenterImp.class
         },
         library = true
 )
@@ -41,5 +46,11 @@ public class RootModule {
     @Singleton
     public Context provideApplicationContext() {
         return context;
+    }
+
+    @Provides
+    @Singleton
+    public Bus provideBusEvent() {
+        return new Bus();
     }
 }

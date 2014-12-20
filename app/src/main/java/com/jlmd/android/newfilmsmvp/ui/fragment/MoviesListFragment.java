@@ -13,6 +13,7 @@ import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MoviesListPresenter;
 import com.jlmd.android.newfilmsmvp.mvp.view.MoviesListView;
 import com.jlmd.android.newfilmsmvp.ui.adapter.MoviesListRecyclerAdapter;
+import com.jlmd.android.newfilmsmvp.ui.view.ClickRecyclerView;
 import com.melnykov.fab.FloatingActionButton;
 
 import java.util.List;
@@ -30,10 +31,9 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
     @Inject
     protected MoviesListPresenter moviesListPresenter;
 
-    @InjectView(R.id.moviesListView)
-    protected RecyclerView moviesListView;
-
-    @InjectView(R.id.sortButton)
+    @InjectView(R.id.rv_movies_list)
+    protected ClickRecyclerView moviesListView;
+    @InjectView(R.id.btn_sort_items)
     protected FloatingActionButton sortButton;
 
     private MoviesListRecyclerAdapter moviesListAdapter;
@@ -62,9 +62,15 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
         moviesListView.setItemAnimator(new DefaultItemAnimator());
         moviesListAdapter = new MoviesListRecyclerAdapter(getActivity().getApplicationContext());
         moviesListView.setAdapter(moviesListAdapter);
+        moviesListView.setOnItemClickListener(new ClickRecyclerView.OnItemClickListener() {
+            @Override
+            public void onItemClick(RecyclerView parent, View view, int position, long id) {
+                moviesListPresenter.onItemSelected(position);
+            }
+        });
     }
 
-    @OnClick(R.id.sortButton)
+    @OnClick(R.id.btn_sort_items)
     protected void onSortButtonClick() {
         moviesListPresenter.onSortButtonClick();
     }

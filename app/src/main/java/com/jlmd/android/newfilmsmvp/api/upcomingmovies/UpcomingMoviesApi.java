@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface UpcomingMoviesApi {
     static final String BASE_URL = "https://api.themoviedb.org/3/movie";
-    static final String API_KEY = "cb53f5e81377dfb656d6f6eba5efa33a";
+    static final String API_KEY = "XXX";
 
     void getUpcomingMovies(Callback callback);
 

@@ -8,8 +8,7 @@
     <include layout="@layout/toolbar"/>
 
     <fragment
-        android:layout_below="@+id/toolbar"
-        android:id="@+id/character_fragment"
+        android:id="@+id/frg_movies_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="com.jlmd.android.newfilmsmvp.ui.fragment.MoviesListFragment"/>

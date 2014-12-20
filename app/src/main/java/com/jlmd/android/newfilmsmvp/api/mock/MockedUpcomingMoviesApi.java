@@ -8,6 +8,7 @@ import com.jlmd.android.newfilmsmvp.api.upcomingmovies.UpcomingMoviesApi;
 import com.jlmd.android.newfilmsmvp.api.upcomingmovies.model.UpcomingMoviesResult;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.api.mapper.Mapper;
+import com.jlmd.android.newfilmsmvp.utils.Utils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,7 +23,7 @@ public class MockedUpcomingMoviesApi implements UpcomingMoviesApi {
     private final Mapper upcomingMoviesApiMapper;
     private final Context context;
 
-    private static final String FILE_NAME = "upcomingmovies_mocked.json";
+    private static final String FILE_NAME = "mock/upcoming/upcomingmovies.json";
 
     public MockedUpcomingMoviesApi(Context context,
                                    Mapper upcomingMoviesApiMapper) {
@@ -45,8 +46,9 @@ public class MockedUpcomingMoviesApi implements UpcomingMoviesApi {
 
         Runnable runnable = new Runnable() {
             public void run() {
+                String json = Utils.loadJSONFromAsset(context, FILE_NAME);
                 List<Movie> movies = (List<Movie>) upcomingMoviesApiMapper.
-                        map(gson.fromJson(loadJSONFromAsset(), UpcomingMoviesResult.class));
+                        map(gson.fromJson(json, UpcomingMoviesResult.class));
                 callback.onFinish(movies);
             }
         };
@@ -54,23 +56,4 @@ public class MockedUpcomingMoviesApi implements UpcomingMoviesApi {
         handler.postDelayed(runnable, delay);
     }
 
-    private String loadJSONFromAsset() {
-        String json;
-
-        try {
-            InputStream is = context.getAssets().open(FILE_NAME);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-
-            is.read(buffer);
-            is.close();
-
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-
-        return json;
-    }
 }

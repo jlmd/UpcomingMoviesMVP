@@ -1,5 +1,7 @@
 package com.jlmd.android.newfilmsmvp.di.module;
 
+import android.content.Context;
+
 import com.jlmd.android.newfilmsmvp.api.moviedetails.MovieDetailsApi;
 import com.jlmd.android.newfilmsmvp.api.upcomingmovies.UpcomingMoviesApi;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MovieDetailsPresenter;
@@ -7,6 +9,7 @@ import com.jlmd.android.newfilmsmvp.mvp.presenter.MovieDetailsPresenterImp;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MoviesListPresenter;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MoviesListPresenterImp;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.Presenter;
+import com.squareup.otto.Bus;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -24,8 +27,9 @@ import dagger.Provides;
 public class PresenterModule {
     @Provides
     @Singleton
-    MoviesListPresenter providesMoviesListPresenter(UpcomingMoviesApi upcomingMoviesApi) {
-        return new MoviesListPresenterImp(upcomingMoviesApi);
+    MoviesListPresenter providesMoviesListPresenter(UpcomingMoviesApi upcomingMoviesApi,
+                                                    Context appContext, Bus eventBus) {
+        return new MoviesListPresenterImp(upcomingMoviesApi, appContext, eventBus);
     }
 
     @Provides

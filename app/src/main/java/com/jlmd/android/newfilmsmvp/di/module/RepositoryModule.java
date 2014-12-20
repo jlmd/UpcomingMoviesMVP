@@ -1,7 +1,11 @@
 package com.jlmd.android.newfilmsmvp.di.module;
 
+import android.content.Context;
+
 import com.jlmd.android.newfilmsmvp.api.mapper.MovieDetailsMapper;
 import com.jlmd.android.newfilmsmvp.api.mapper.UpcomingMoviesMapper;
+import com.jlmd.android.newfilmsmvp.api.mock.MockedMovieDetailsApi;
+import com.jlmd.android.newfilmsmvp.api.mock.MockedUpcomingMoviesApi;
 import com.jlmd.android.newfilmsmvp.api.moviedetails.MovieDetailsApi;
 import com.jlmd.android.newfilmsmvp.api.retrofit.moviedetails.RetrofitMovieDetailsApi;
 import com.jlmd.android.newfilmsmvp.api.retrofit.upcomingmovies.RetrofitUpcomingMoviesApi;
@@ -39,16 +43,17 @@ public class RepositoryModule {
 
     @Provides
     @Singleton
-    public UpcomingMoviesApi providesUpcomingMoviesApi(@Named("upcomingmovies")
+    public UpcomingMoviesApi providesUpcomingMoviesApi(Context appContext,
+                                                       @Named("upcomingmovies")
                                                            final Mapper mapper) {
-        return new RetrofitUpcomingMoviesApi(mapper);
+        return new MockedUpcomingMoviesApi(appContext, mapper);
     }
 
     @Provides
     @Singleton
-    public MovieDetailsApi providesMovieDetailsApi(@Named("moviedetails")
-                                                       final Mapper mapper) {
-        return new RetrofitMovieDetailsApi(mapper);
+    public MovieDetailsApi providesMovieDetailsApi(Context appContext,
+                                                   @Named("moviedetails") final Mapper mapper) {
+        return new MockedMovieDetailsApi(appContext, mapper);
     }
 
 }

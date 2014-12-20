@@ -1,0 +1,57 @@
+{
+    "adult": false,
+    "backdrop_path": "/lKWeEfIvgbqe3D84qc1hDmVBLuX.jpg",
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+        {
+            "id": 18,
+            "name": "Drama"
+        }
+    ],
+    "homepage": "",
+    "id": 284293,
+    "imdb_id": "tt3316960",
+    "original_title": "Still Alice",
+    "overview": "Alice Howland, happily married with three grown children, is a renowned linguistics professor who starts to forget words. When she receives a devastating diagnosis, Alice and her family find their bonds tested.",
+    "popularity": 1.05866258658979,
+    "poster_path": "/4n7T0G6kNLszUyfqKAboesNTm55.jpg",
+    "production_companies": [
+        {
+            "name": "Killer Films",
+            "id": 1422
+        },
+        {
+            "name": "BSM Studio",
+            "id": 28361
+        },
+        {
+            "name": "Backup Media",
+            "id": 26590
+        },
+        {
+            "name": "Big Indie Pictures",
+            "id": 6831
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "US",
+            "name": "United States of America"
+        }
+    ],
+    "release_date": "2014-12-05",
+    "revenue": 0,
+    "runtime": 99,
+    "spoken_languages": [
+        {
+            "iso_639_1": "en",
+            "name": "English"
+        }
+    ],
+    "status": "Released",
+    "tagline": "",
+    "title": "Still Alice",
+    "vote_average": 6.5,
+    "vote_count": 5
+}

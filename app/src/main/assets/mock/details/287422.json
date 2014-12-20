@@ -1,0 +1,48 @@
+{
+    "adult": false,
+    "backdrop_path": null,
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 53,
+            "name": "Thriller"
+        },
+        {
+            "id": 10749,
+            "name": "Romance"
+        }
+    ],
+    "homepage": "",
+    "id": 287422,
+    "imdb_id": "tt2058617",
+    "original_title": "Gentlemen",
+    "overview": "Beaten up, bruised, and scared, a young writer hides in a Stockholm apartment, writing the story of its disappeared inhabitants: the flamboyant and charismatic Morgan brothers.",
+    "popularity": 0.241180100431451,
+    "poster_path": "/lO3B4AZRhxMQeyt7Qb3P0er9Sqo.jpg",
+    "production_companies": [],
+    "production_countries": [
+        {
+            "iso_3166_1": "SE",
+            "name": "Sweden"
+        }
+    ],
+    "release_date": "2014-12-05",
+    "revenue": 0,
+    "runtime": 141,
+    "spoken_languages": [
+        {
+            "iso_639_1": "sv",
+            "name": "svenska"
+        }
+    ],
+    "status": "Released",
+    "tagline": "",
+    "title": "Gentlemen",
+    "vote_average": 0,
+    "vote_count": 0
+}

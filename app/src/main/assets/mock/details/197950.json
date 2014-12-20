@@ -1,0 +1,58 @@
+{
+    "adult": false,
+    "backdrop_path": "/9SgNqnKnXId8gntcGqu2Xb6LJpS.jpg",
+    "belongs_to_collection": null,
+    "budget": 0,
+    "genres": [
+        {
+            "id": 80,
+            "name": "Crime"
+        },
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 36,
+            "name": "History"
+        }
+    ],
+    "homepage": "",
+    "id": 197950,
+    "imdb_id": "tt2935564",
+    "original_title": "La French",
+    "overview": "Newly transferred to the bustling port city of Marseille to assist with a crackdown on organized crime, energetic young magistrate Pierre Michel is given a rapid-fire tutorial on the ins and outs of an out-of-control drug trade. Pierre's wildly ambitious mission is to take on the French Connection, a highly organized operation that controls the city's underground heroin economy and is overseen by the notorious —and reputedly untouchable— Gaetan Zampa. Fearless, determined and willing to go the distance, Pierre plunges into an underworld world of insane danger and ruthless criminals.",
+    "popularity": 0.629842942618094,
+    "poster_path": "/eZWwJ7rsPtfDXafSuLc4QgoueAk.jpg",
+    "production_companies": [
+        {
+            "name": "Gaumont",
+            "id": 9
+        },
+        {
+            "name": "Scope Pictures",
+            "id": 11199
+        }
+    ],
+    "production_countries": [
+        {
+            "iso_3166_1": "FR",
+            "name": "France"
+        }
+    ],
+    "release_date": "2014-12-03",
+    "revenue": 0,
+    "runtime": 0,
+    "spoken_languages": [
+        {
+            "iso_639_1": "fr",
+            "name": "Français"
+        }
+    ],
+    "status": "Released",
+    "tagline": "",
+    "title": "The Connection",
+    "vote_average": 7.6,
+    "vote_count": 9
+}
+}

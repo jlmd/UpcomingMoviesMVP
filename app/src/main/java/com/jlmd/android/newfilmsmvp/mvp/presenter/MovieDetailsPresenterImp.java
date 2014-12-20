@@ -5,7 +5,6 @@ import android.util.Log;
 import com.jlmd.android.newfilmsmvp.api.moviedetails.MovieDetailsApi;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
-import com.jlmd.android.newfilmsmvp.mvp.view.MovieDetailsView;
 
 /**
  * @author jlmd

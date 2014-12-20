@@ -1,12 +1,14 @@
 package com.jlmd.android.newfilmsmvp.mvp.presenter;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.jlmd.android.newfilmsmvp.api.upcomingmovies.UpcomingMoviesApi;
+import com.jlmd.android.newfilmsmvp.bus.event.ItemSelectedEvent;
 import com.jlmd.android.newfilmsmvp.domain.comparator.MovieDateComparator;
 import com.jlmd.android.newfilmsmvp.domain.comparator.MovieTitleComparator;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
-import com.jlmd.android.newfilmsmvp.mvp.view.MoviesListView;
+import com.squareup.otto.Bus;
 
 import java.util.Collections;
 import java.util.List;
@@ -19,10 +21,14 @@ public class MoviesListPresenterImp extends MoviesListPresenter {
     private UpcomingMoviesApi upcomingMoviesApi;
     private boolean sortedByTitle;
     private List<Movie> movies = Collections.emptyList();
+    private final Context context;
+    private final Bus bus;
     private final static String TAG = MoviesListPresenterImp.class.getSimpleName();
 
-    public MoviesListPresenterImp(UpcomingMoviesApi upcomingMoviesApi) {
+    public MoviesListPresenterImp(UpcomingMoviesApi upcomingMoviesApi, Context context, Bus bus) {
         this.upcomingMoviesApi = upcomingMoviesApi;
+        this.context = context;
+        this.bus = bus;
     }
 
     @Override
@@ -32,17 +38,17 @@ public class MoviesListPresenterImp extends MoviesListPresenter {
 
     @Override
     public void resume() {
-
+        // Empty
     }
 
     @Override
     public void pause() {
-
+        // Empty
     }
 
     @Override
     public void destroy() {
-
+        // Empty
     }
 
     @Override
@@ -63,6 +69,19 @@ public class MoviesListPresenterImp extends MoviesListPresenter {
     private void sortMoviesByDate() {
         Collections.sort(movies, MovieDateComparator.getInstance());
         showMovies(movies);
+    }
+
+    @Override
+    public void onItemSelected(int position) {
+        bus.post(new ItemSelectedEvent(movies.get(position)));
+    }
+
+    private void launchMovieDetailsActivity(Movie movie) {
+
+//        Intent detailsActivityIntent = new Intent(context, MovieDetailsActivity.class);
+//        detailsActivityIntent.putExtra(Constants.KEY_MOVIE_DETAILS, movie);
+//        detailsActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        context.startActivity(detailsActivityIntent);
     }
 
     private void loadMovies() {
