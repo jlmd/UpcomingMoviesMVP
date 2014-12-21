@@ -58,6 +58,6 @@ public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<M
     }
 
     private String createAbsoluteImgURL(String relativeImgURL, int width) {
-        return width + IMAGE_URL + relativeImgURL;
+        return IMAGE_URL + width + relativeImgURL;
     }
 }

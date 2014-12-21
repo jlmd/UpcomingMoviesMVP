@@ -164,18 +164,6 @@
         {
             "adult": false,
             "backdrop_path": null,
-            "id": 232572,
-            "original_title": "A Walk in the Woods",
-            "release_date": "2014-12-04",
-            "poster_path": null,
-            "popularity": 0.761667965501382,
-            "title": "A Walk in the Woods",
-            "vote_average": 0,
-            "vote_count": 0
-        },
-        {
-            "adult": false,
-            "backdrop_path": null,
             "id": 304613,
             "original_title": "Charlie's Farm",
             "release_date": "2014-12-04",

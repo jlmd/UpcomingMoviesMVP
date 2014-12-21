@@ -60,7 +60,7 @@ public class MovieDetailsResult {
     private String title;
     @SerializedName("vote_average")
     @Expose
-    private Integer voteAverage;
+    private Double voteAverage;
     @SerializedName("vote_count")
     @Expose
     private Integer voteCount;
@@ -448,7 +448,7 @@ public class MovieDetailsResult {
      * @return
      *     The voteAverage
      */
-    public Integer getVoteAverage() {
+    public Double getVoteAverage() {
         return voteAverage;
     }
 
@@ -457,7 +457,7 @@ public class MovieDetailsResult {
      * @param voteAverage
      *     The vote_average
      */
-    public void setVoteAverage(Integer voteAverage) {
+    public void setVoteAverage(Double voteAverage) {
         this.voteAverage = voteAverage;
     }
 

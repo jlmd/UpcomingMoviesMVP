@@ -6,6 +6,7 @@ import android.os.Handler;
 import com.google.gson.Gson;
 import com.jlmd.android.newfilmsmvp.api.mapper.Mapper;
 import com.jlmd.android.newfilmsmvp.api.moviedetails.MovieDetailsApi;
+import com.jlmd.android.newfilmsmvp.api.moviedetails.model.MovieDetailsResult;
 import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
 import com.jlmd.android.newfilmsmvp.utils.Utils;
 
@@ -44,7 +45,7 @@ public class MockedMovieDetailsApi implements MovieDetailsApi {
             public void run() {
                 String json = Utils.loadJSONFromAsset(context, FILE_PATH + movieId + ".json");
                 MovieDetails movieDetails = (MovieDetails) movieDetailsMapper.
-                        map(gson.fromJson(json, MovieDetails.class));
+                        map(gson.fromJson(json, MovieDetailsResult.class));
                 callback.onFinish(movieDetails);
             }
         };

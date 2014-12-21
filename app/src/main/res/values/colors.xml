@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Upcoming movies list -->
+    <!-- Upcoming movies view -->
     <color name="list_title_text_color">#424242</color>
     <color name="list_rating_color">#BDBDBD</color>
     <color name="list_release_date_text_color">#FBC02D</color>
     <color name="list_background_color">#E0E0E0</color>
+
+    <!-- Movie details view -->
+    <color name="movie_title">#424242</color>
+    <color name="movie_genres">#BDBDBD</color>
+    <color name="movie_description">#757575</color>
 
     <!-- Order float button -->
     <color name="float_button_primary">#00C853</color>

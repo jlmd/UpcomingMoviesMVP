@@ -16,7 +16,7 @@ public class MovieDetailsMapper implements Mapper<MovieDetailsResult, MovieDetai
         MovieDetails movieDetails = new MovieDetails();
         movieDetails.setGenres(getGenresList(movieDetailsResult.getGenres()));
         movieDetails.setHomepage(movieDetailsResult.getHomepage());
-        movieDetails.setOverview(movieDetails.getOverview());
+        movieDetails.setOverview(movieDetailsResult.getOverview());
         return movieDetails;
     }
 
