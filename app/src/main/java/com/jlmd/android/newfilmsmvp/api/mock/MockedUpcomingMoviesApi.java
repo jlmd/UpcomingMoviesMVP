@@ -22,7 +22,6 @@ public class MockedUpcomingMoviesApi implements UpcomingMoviesApi {
     private Gson gson;
     private final Mapper upcomingMoviesApiMapper;
     private final Context context;
-
     private static final String FILE_NAME = "mock/upcoming/upcomingmovies.json";
 
     public MockedUpcomingMoviesApi(Context context,

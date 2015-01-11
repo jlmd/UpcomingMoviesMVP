@@ -11,14 +11,14 @@ import java.util.Date;
 public class Movie implements Parcelable {
     private int id;
     private String title;
-    private String posterImgUrl;
-    private String backdropImgUrl;
+    private Image posterImage;
+    private Image backdropImage;
     private Date releaseDate;
     private boolean adult;
     private Double voteAverage;
     private float voteCount;
     private double popularity;
-    private MovieDetails movieDetails;
+    private String overview;
 
     public Movie() {
         // Empty constructor
@@ -27,15 +27,15 @@ public class Movie implements Parcelable {
     protected Movie(Parcel in) {
         id = in.readInt();
         title = in.readString();
-        posterImgUrl = in.readString();
-        backdropImgUrl = in.readString();
+        posterImage = (Image) in.readValue(Image.class.getClassLoader());
+        backdropImage = (Image) in.readValue(Image.class.getClassLoader());
         long tmpReleaseDate = in.readLong();
         releaseDate = tmpReleaseDate != -1 ? new Date(tmpReleaseDate) : null;
         adult = in.readByte() != 0x00;
         voteAverage = in.readByte() == 0x00 ? null : in.readDouble();
         voteCount = in.readFloat();
         popularity = in.readDouble();
-        movieDetails = (MovieDetails) in.readValue(MovieDetails.class.getClassLoader());
+        overview = in.readString();
     }
 
     public String getTitle() {
@@ -44,22 +44,6 @@ public class Movie implements Parcelable {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getPosterImgUrl() {
-        return posterImgUrl;
-    }
-
-    public void setPosterImgUrl(String posterImgUrl) {
-        this.posterImgUrl = posterImgUrl;
-    }
-
-    public String getBackdropImgUrl() {
-        return backdropImgUrl;
-    }
-
-    public void setBackdropImgUrl(String backdropImgUrl) {
-        this.backdropImgUrl = backdropImgUrl;
     }
 
     public Date getReleaseDate() {
@@ -110,12 +94,28 @@ public class Movie implements Parcelable {
         this.id = id;
     }
 
-    public MovieDetails getMovieDetails() {
-        return movieDetails;
+    public String getOverview() {
+        return overview;
     }
 
-    public void setMovieDetails(MovieDetails movieDetails) {
-        this.movieDetails = movieDetails;
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public Image getPosterImage() {
+        return posterImage;
+    }
+
+    public void setPosterImage(Image posterImage) {
+        this.posterImage = posterImage;
+    }
+
+    public Image getBackdropImage() {
+        return backdropImage;
+    }
+
+    public void setBackdropImage(Image backdropImage) {
+        this.backdropImage = backdropImage;
     }
 
     @Override
@@ -127,8 +127,8 @@ public class Movie implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(id);
         dest.writeString(title);
-        dest.writeString(posterImgUrl);
-        dest.writeString(backdropImgUrl);
+        dest.writeValue(posterImage);
+        dest.writeValue(backdropImage);
         dest.writeLong(releaseDate != null ? releaseDate.getTime() : -1L);
         dest.writeByte((byte) (adult ? 0x01 : 0x00));
         if (voteAverage == null) {
@@ -139,7 +139,7 @@ public class Movie implements Parcelable {
         }
         dest.writeFloat(voteCount);
         dest.writeDouble(popularity);
-        dest.writeValue(movieDetails);
+        dest.writeString(overview);
     }
 
     @SuppressWarnings("unused")

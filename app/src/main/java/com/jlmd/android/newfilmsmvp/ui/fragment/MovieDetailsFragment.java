@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.jlmd.android.newfilmsmvp.R;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
+import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MovieDetailsPresenter;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MoviesListPresenter;
 import com.jlmd.android.newfilmsmvp.mvp.view.MovieDetailsView;
@@ -89,13 +90,13 @@ public class MovieDetailsFragment extends BaseFragment implements MovieDetailsVi
     }
 
     @Override
-    public void renderMovie(Movie movie) {
+    public void renderMovie(MovieDetails movieDetails) {
         Picasso.with(getActivity().getApplicationContext())
-                .load(movie.getBackdropImgUrl())
+                .load(movieDetails.getMovie().getBackdropImage().getLowResolutionImgUrl())
                 .into(ivBackDrop);
-        tvTitle.setText(movie.getTitle());
-        tvGenres.setText(TextUtils.join(", ", movie.getMovieDetails().getGenres()));
-        tvDescription.setText(movie.getMovieDetails().getOverview());
+        tvTitle.setText(movieDetails.getMovie().getTitle());
+        tvGenres.setText(TextUtils.join(", ", movieDetails.getGenres()));
+        tvDescription.setText(movieDetails.getMovie().getOverview());
     }
 
 }

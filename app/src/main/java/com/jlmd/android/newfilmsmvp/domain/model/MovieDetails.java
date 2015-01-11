@@ -11,15 +11,16 @@ import java.util.List;
  * @author jlmd
  */
 public class MovieDetails implements Parcelable {
+    private Movie movie;
     private List<String> genres = Collections.emptyList();
     private String homepage;
-    private String overview;
 
     public MovieDetails() {
         // Empty constructor
     }
 
     protected MovieDetails(Parcel in) {
+        movie = (Movie) in.readValue(Movie.class.getClassLoader());
         if (in.readByte() == 0x01) {
             genres = new ArrayList<String>();
             in.readList(genres, String.class.getClassLoader());
@@ -27,7 +28,14 @@ public class MovieDetails implements Parcelable {
             genres = null;
         }
         homepage = in.readString();
-        overview = in.readString();
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 
     public List<String> getGenres() {
@@ -46,14 +54,6 @@ public class MovieDetails implements Parcelable {
         this.homepage = homepage;
     }
 
-    public String getOverview() {
-        return overview;
-    }
-
-    public void setOverview(String overview) {
-        this.overview = overview;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -61,6 +61,7 @@ public class MovieDetails implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(movie);
         if (genres == null) {
             dest.writeByte((byte) (0x00));
         } else {
@@ -68,11 +69,11 @@ public class MovieDetails implements Parcelable {
             dest.writeList(genres);
         }
         dest.writeString(homepage);
-        dest.writeString(overview);
     }
 
     @SuppressWarnings("unused")
-    public static final Parcelable.Creator<MovieDetails> CREATOR = new Parcelable.Creator<MovieDetails>() {
+    public static final Parcelable.Creator<MovieDetails> CREATOR =
+            new Parcelable.Creator<MovieDetails>() {
         @Override
         public MovieDetails createFromParcel(Parcel in) {
             return new MovieDetails(in);

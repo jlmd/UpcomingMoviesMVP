@@ -30,8 +30,6 @@ public class MovieDetailsResult {
     @Expose
     private String originalTitle;
     @Expose
-    private String overview;
-    @Expose
     private Double popularity;
     @SerializedName("poster_path")
     @Expose
@@ -225,24 +223,6 @@ public class MovieDetailsResult {
      */
     public void setOriginalTitle(String originalTitle) {
         this.originalTitle = originalTitle;
-    }
-
-    /**
-     * 
-     * @return
-     *     The overview
-     */
-    public String getOverview() {
-        return overview;
-    }
-
-    /**
-     * 
-     * @param overview
-     *     The overview
-     */
-    public void setOverview(String overview) {
-        this.overview = overview;
     }
 
     /**

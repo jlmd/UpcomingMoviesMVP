@@ -47,8 +47,8 @@ public class MovieDetailsPresenterImp extends MovieDetailsPresenter {
         movieDetailsApi.getMovieDetails(movie.getId(), new MovieDetailsApi.Callback() {
             @Override
             public void onFinish(MovieDetails movieDetails) {
-                movie.setMovieDetails(movieDetails);
-                view.renderMovie(movie);
+                movieDetails.setMovie(movie);
+                view.renderMovie(movieDetails);
                 view.hideLoading();
             }
 

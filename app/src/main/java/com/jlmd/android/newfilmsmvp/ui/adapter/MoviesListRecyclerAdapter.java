@@ -17,6 +17,7 @@ import java.util.Collections;
 import java.util.List;
 
 import butterknife.InjectView;
+import butterknife.Optional;
 
 /**
  * @author jlmd
@@ -57,32 +58,49 @@ public class MoviesListRecyclerAdapter extends RecyclerView.Adapter<MoviesListRe
     }
 
     private void renderMovieView(Movie movie, ViewHolder viewHolder) {
+        String posterImage;
+
+        if (!isLandscape(viewHolder)) {
+            posterImage = movie.getPosterImage().getLowResolutionImgUrl();
+        } else {
+            posterImage = movie.getPosterImage().getMediumResolutionImgUrl();
+            viewHolder.tvSummary.setText(movie.getOverview());
+        }
+
         Picasso.with(context)
-                .load(movie.getPosterImgUrl())
-                .into(viewHolder.posterImage);
+                .load(posterImage)
+                .into(viewHolder.ivPosterImage);
 
         if (movie.getVoteCount() > 0) {
-            viewHolder.movieRating.setText(movie.getVoteAverage() + RATING_SEPARATOR +
+            viewHolder.tvMovieRating.setText(movie.getVoteAverage() + RATING_SEPARATOR +
                     RATING_MAX_VALUE);
         }
 
-        viewHolder.movieTitle.setText(movie.getTitle());
+        viewHolder.tvMovieTitle.setText(movie.getTitle());
         viewHolder.movieReleaseDate.setText(DateFormat.format(RELEASE_DATE_FORMAT,
                 movie.getReleaseDate()).toString());
     }
 
+    private boolean isLandscape(ViewHolder viewHolder) {
+        return viewHolder.tvSummary != null;
+    }
+
     public class ViewHolder extends BaseRecyclerViewHolder {
-        @InjectView(R.id.moviePosterImage)
-        protected ImageView posterImage;
+        @InjectView(R.id.iv_poster_image)
+        protected ImageView ivPosterImage;
 
-        @InjectView(R.id.movieTitle)
-        protected TextView movieTitle;
+        @InjectView(R.id.tv_movie_title)
+        protected TextView tvMovieTitle;
 
-        @InjectView(R.id.movieRating)
-        protected TextView movieRating;
+        @InjectView(R.id.tv_movie_rating)
+        protected TextView tvMovieRating;
 
-        @InjectView(R.id.movieReleaseDate)
+        @InjectView(R.id.tv_movie_release_date)
         protected TextView movieReleaseDate;
+
+        @Optional
+        @InjectView(R.id.tv_overview)
+        protected TextView tvSummary;
 
         public ViewHolder(View view) {
             super(view);

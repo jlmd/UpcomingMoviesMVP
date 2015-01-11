@@ -31,6 +31,8 @@ public class Result {
     @SerializedName("vote_count")
     @Expose
     private Integer voteCount;
+    @Expose
+    private String overview;
 
     /**
      * 
@@ -212,4 +214,11 @@ public class Result {
         this.voteCount = voteCount;
     }
 
+    public String getOverview() {
+        return overview;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
 }

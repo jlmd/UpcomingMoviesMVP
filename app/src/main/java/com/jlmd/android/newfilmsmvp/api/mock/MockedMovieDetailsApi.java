@@ -19,7 +19,6 @@ public class MockedMovieDetailsApi implements MovieDetailsApi {
     private Gson gson;
     private final Mapper movieDetailsMapper;
     private final Context context;
-
     private static final String FILE_PATH = "mock/details/";
 
     public MockedMovieDetailsApi(Context context,
