@@ -15,8 +15,8 @@ import android.view.View;
 */
 abstract class ClickItemTouchListener implements RecyclerView.OnItemTouchListener {
 
-    private static final int ANDROID_SDK_19 = 19;
     private final GestureDetectorCompat mGestureDetector;
+    private static final int ANDROID_SDK_19 = 19;
 
     ClickItemTouchListener(RecyclerView hostView) {
         mGestureDetector = new ItemClickGestureDetector(hostView.getContext(),

@@ -9,6 +9,7 @@ import java.util.Date;
  * @author jlmd
  */
 public class Movie implements Parcelable {
+
     private int id;
     private String title;
     private Image posterImage;

@@ -12,8 +12,8 @@ import android.view.View;
  * From https://github.com/lucasr/twoway-view
  */
 public class ClickRecyclerView extends RecyclerView {
-    private TouchListener mTouchListener;
 
+    private TouchListener mTouchListener;
     private OnItemClickListener mItemClickListener;
     private OnItemLongClickListener mItemLongClickListener;
 

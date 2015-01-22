@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class BelongsToCollection {
+
     @Expose
     private Integer id;
     @Expose

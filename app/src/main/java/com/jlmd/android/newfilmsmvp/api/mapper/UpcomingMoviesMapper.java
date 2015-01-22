@@ -19,6 +19,7 @@ import java.util.List;
 public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<Movie>> {
 
     private static final String IMAGE_URL = "http://image.tmdb.org/t/p/w";
+    private static final String RELEASE_DATE_FORMAT = "yyyy-MM-dd";
     private static final int POSTER_WIDTH_LOW = 185;
     private static final int POSTER_WIDTH_MEDIUM = 342;
     private static final int POSTER_WIDTH_HIGH = 500;
@@ -29,11 +30,9 @@ public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<M
     @Override
     public List<Movie> map(UpcomingMoviesResult upcomingMoviesResult) {
         List<Movie> movies = new ArrayList<Movie>();
-
         for (Result result : upcomingMoviesResult.getResults()) {
             movies.add(mapMovie(result));
         }
-
         return movies;
     }
 
@@ -51,7 +50,6 @@ public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<M
         movie.setVoteCount(result.getVoteCount());
         movie.setPopularity(result.getPopularity());
         movie.setOverview(result.getOverview());
-
         return movie;
     }
 
@@ -64,7 +62,7 @@ public class UpcomingMoviesMapper implements Mapper<UpcomingMoviesResult, List<M
     }
 
     private Date parseReleaseDate(String date) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(RELEASE_DATE_FORMAT);
         try {
             return simpleDateFormat.parse(date);
         } catch (ParseException e) {

@@ -1,6 +1,5 @@
 package com.jlmd.android.newfilmsmvp.mvp.presenter;
 
-import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.mvp.view.MoviesListView;
 
 /**

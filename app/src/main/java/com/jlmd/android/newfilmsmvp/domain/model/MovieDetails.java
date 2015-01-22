@@ -11,6 +11,7 @@ import java.util.List;
  * @author jlmd
  */
 public class MovieDetails implements Parcelable {
+
     private Movie movie;
     private List<String> genres = Collections.emptyList();
     private String homepage;

@@ -1,15 +1,15 @@
 package com.jlmd.android.newfilmsmvp.di.module;
 
-import android.content.Context;
-
 import com.jlmd.android.newfilmsmvp.api.moviedetails.MovieDetailsApi;
 import com.jlmd.android.newfilmsmvp.api.upcomingmovies.UpcomingMoviesApi;
+import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MovieDetailsPresenter;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MovieDetailsPresenterImp;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MoviesListPresenter;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MoviesListPresenterImp;
-import com.jlmd.android.newfilmsmvp.mvp.presenter.Presenter;
 import com.squareup.otto.Bus;
+
+import java.util.Comparator;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -28,8 +28,13 @@ public class PresenterModule {
     @Provides
     @Singleton
     MoviesListPresenter providesMoviesListPresenter(UpcomingMoviesApi upcomingMoviesApi,
-                                                    Context appContext, Bus eventBus) {
-        return new MoviesListPresenterImp(upcomingMoviesApi, appContext, eventBus);
+                                                    Bus eventBus,
+                                                    @Named("date") Comparator<Movie>
+                                                            movieDateComparator,
+                                                    @Named("title") Comparator<Movie>
+                                                            movieTitleComparator) {
+        return new MoviesListPresenterImp(upcomingMoviesApi, eventBus,
+                movieDateComparator, movieTitleComparator);
     }
 
     @Provides

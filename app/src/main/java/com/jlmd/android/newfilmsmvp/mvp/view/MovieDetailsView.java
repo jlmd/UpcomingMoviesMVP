@@ -1,9 +1,6 @@
 package com.jlmd.android.newfilmsmvp.mvp.view;
 
-import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
-
-import java.util.List;
 
 /**
  * @author jlmd

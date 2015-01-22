@@ -1,5 +1,6 @@
 package com.jlmd.android.newfilmsmvp.ui.fragment;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jlmd.android.newfilmsmvp.R;
+import com.jlmd.android.newfilmsmvp.domain.model.Image;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MovieDetailsPresenter;
@@ -81,22 +83,31 @@ public class MovieDetailsFragment extends BaseFragment implements MovieDetailsVi
 
     @Override
     public void showLoading() {
-
+        // Empty
     }
 
     @Override
     public void hideLoading() {
-
+        // Empty
     }
 
     @Override
     public void renderMovie(MovieDetails movieDetails) {
-        Picasso.with(getActivity().getApplicationContext())
-                .load(movieDetails.getMovie().getBackdropImage().getLowResolutionImgUrl())
-                .into(ivBackDrop);
+       Picasso.with(getActivity().getApplicationContext())
+            .load(getImageUrl(movieDetails.getMovie().getBackdropImage()))
+            .into(ivBackDrop);
         tvTitle.setText(movieDetails.getMovie().getTitle());
+        // TODO Create a formatter/parser for this
         tvGenres.setText(TextUtils.join(", ", movieDetails.getGenres()));
         tvDescription.setText(movieDetails.getMovie().getOverview());
+    }
+
+    private String getImageUrl(Image image) {
+        return isLandscape() ? image.getHighResolutionImgUrl() : image.getLowResolutionImgUrl();
+    }
+
+    private boolean isLandscape() {
+        return getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE;
     }
 
 }

@@ -11,6 +11,7 @@ import java.util.List;
  * @author jlmd
  */
 public class MovieDetailsMapper implements Mapper<MovieDetailsResult, MovieDetails> {
+
     @Override
     public MovieDetails map(MovieDetailsResult movieDetailsResult) {
         MovieDetails movieDetails = new MovieDetails();

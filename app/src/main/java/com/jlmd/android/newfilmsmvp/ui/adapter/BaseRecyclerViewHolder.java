@@ -8,7 +8,8 @@ import butterknife.ButterKnife;
 /**
  * @author jlmd
  */
-public abstract class BaseRecyclerViewHolder extends RecyclerView.ViewHolder{
+public abstract class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
+
     public BaseRecyclerViewHolder(View view) {
         super(view);
         ButterKnife.inject(this, view);

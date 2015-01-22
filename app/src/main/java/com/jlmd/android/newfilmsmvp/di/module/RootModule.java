@@ -22,7 +22,8 @@ import dagger.Provides;
 @Module(
         includes = {
                 RepositoryModule.class,
-                PresenterModule.class
+                PresenterModule.class,
+                ComparatorModule.class
         },
         injects = {
                 AppApplication.class,

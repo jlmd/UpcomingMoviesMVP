@@ -1,6 +1,5 @@
 package com.jlmd.android.newfilmsmvp.mvp.presenter;
 
-import android.content.Context;
 import android.util.Log;
 
 import com.jlmd.android.newfilmsmvp.api.upcomingmovies.UpcomingMoviesApi;
@@ -11,6 +10,7 @@ import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.squareup.otto.Bus;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -21,14 +21,18 @@ public class MoviesListPresenterImp extends MoviesListPresenter {
     private UpcomingMoviesApi upcomingMoviesApi;
     private boolean sortedByTitle;
     private List<Movie> movies = Collections.emptyList();
-    private final Context context;
     private final Bus bus;
+    private final Comparator<Movie> movieDateComparator;
+    private final Comparator<Movie> movieTitleComparator;
     private final static String TAG = MoviesListPresenterImp.class.getSimpleName();
 
-    public MoviesListPresenterImp(UpcomingMoviesApi upcomingMoviesApi, Context context, Bus bus) {
+    public MoviesListPresenterImp(UpcomingMoviesApi upcomingMoviesApi, Bus bus,
+                                  Comparator<Movie> movieDateComparator,
+                                  Comparator<Movie> movieTitleComparator) {
         this.upcomingMoviesApi = upcomingMoviesApi;
-        this.context = context;
         this.bus = bus;
+        this.movieDateComparator = movieDateComparator;
+        this.movieTitleComparator = movieTitleComparator;
     }
 
     @Override
@@ -62,26 +66,18 @@ public class MoviesListPresenterImp extends MoviesListPresenter {
     }
 
     private void sortMoviesByTitle() {
-        Collections.sort(movies, MovieTitleComparator.getInstance());
+        Collections.sort(movies, movieTitleComparator);
         showMovies(movies);
     }
 
     private void sortMoviesByDate() {
-        Collections.sort(movies, MovieDateComparator.getInstance());
+        Collections.sort(movies, movieDateComparator);
         showMovies(movies);
     }
 
     @Override
     public void onItemSelected(int position) {
         bus.post(new ItemSelectedEvent(movies.get(position)));
-    }
-
-    private void launchMovieDetailsActivity(Movie movie) {
-
-//        Intent detailsActivityIntent = new Intent(context, MovieDetailsActivity.class);
-//        detailsActivityIntent.putExtra(Constants.KEY_MOVIE_DETAILS, movie);
-//        detailsActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        context.startActivity(detailsActivityIntent);
     }
 
     private void loadMovies() {

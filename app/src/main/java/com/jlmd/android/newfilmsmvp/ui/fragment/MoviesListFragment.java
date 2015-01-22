@@ -83,12 +83,12 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
 
     @Override
     public void showLoading() {
-
+        // Empty
     }
 
     @Override
     public void hideLoading() {
-
+        // Empty
     }
 
     @Override

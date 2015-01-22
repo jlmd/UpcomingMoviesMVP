@@ -25,22 +25,22 @@ public class MovieDetailsPresenterImp extends MovieDetailsPresenter {
 
     @Override
     public void initialize() {
-
+        // Empty
     }
 
     @Override
     public void resume() {
-
+        // Empty
     }
 
     @Override
     public void pause() {
-
+        // Empty
     }
 
     @Override
     public void destroy() {
-
+        // Empty
     }
 
     private void loadMovieDetails(final Movie movie) {

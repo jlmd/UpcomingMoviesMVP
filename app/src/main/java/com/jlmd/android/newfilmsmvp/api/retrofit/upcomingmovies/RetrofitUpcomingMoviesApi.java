@@ -25,6 +25,7 @@ public class RetrofitUpcomingMoviesApi implements UpcomingMoviesApi {
     }
 
     private void initRestAdapter() {
+        // TODO Inject
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(BASE_URL)
                 .build();

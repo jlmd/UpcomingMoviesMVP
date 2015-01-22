@@ -38,7 +38,7 @@
                 android:textSize="14sp"
                 android:textColor="@color/movie_title"
                 android:layout_marginBottom="20dp"
-                tools:text="Adventure, fantasy"/>
+                tools:text="Adventure, Fantasy"/>
 
             <TextView
                 android:id="@+id/tv_description"

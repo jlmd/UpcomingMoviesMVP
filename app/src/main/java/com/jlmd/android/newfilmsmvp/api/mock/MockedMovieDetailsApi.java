@@ -16,30 +16,26 @@ import com.jlmd.android.newfilmsmvp.utils.Utils;
  */
 public class MockedMovieDetailsApi implements MovieDetailsApi {
 
-    private Gson gson;
     private final Mapper movieDetailsMapper;
     private final Context context;
+    private final Gson gson;
     private static final String FILE_PATH = "mock/details/";
+    private static final int LOAD_DELAY_TIME = 1000;
 
     public MockedMovieDetailsApi(Context context,
-                                 Mapper movieDetailsMapper) {
+                                 Mapper movieDetailsMapper, Gson gson) {
         this.context = context;
         this.movieDetailsMapper = movieDetailsMapper;
-        initGson();
-    }
-
-    private void initGson() {
-        gson = new Gson();
+        this.gson = gson;
     }
 
     @Override
     public void getMovieDetails(int movieId, Callback callback) {
-        loadMockedMoviesDelayed(movieId, callback, 1000);
+        loadMockedMoviesDelayed(movieId, callback, LOAD_DELAY_TIME);
     }
 
     private void loadMockedMoviesDelayed(final int movieId, final Callback callback, int delay) {
         Handler handler = new Handler();
-
         Runnable runnable = new Runnable() {
             public void run() {
                 String json = Utils.loadJSONFromAsset(context, FILE_PATH + movieId + ".json");
@@ -48,7 +44,6 @@ public class MockedMovieDetailsApi implements MovieDetailsApi {
                 callback.onFinish(movieDetails);
             }
         };
-
         handler.postDelayed(runnable, delay);
     }
 

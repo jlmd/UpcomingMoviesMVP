@@ -6,7 +6,8 @@ import com.jlmd.android.newfilmsmvp.domain.model.Movie;
  * @author jlmd
  */
 public class ItemSelectedEvent {
-    private Movie movie;
+
+    private final Movie movie;
 
     public ItemSelectedEvent(Movie movie) {
         this.movie = movie;

@@ -23,6 +23,6 @@
         android:src="@drawable/ic_action_content_sort"
         fab:fab_colorNormal="@color/float_button_primary"
         fab:fab_colorPressed="@color/float_button_primary_pressed"
-        fab:fab_colorRipple="@color/float_button_ripple" />
+        fab:fab_colorRipple="@color/float_button_ripple"/>
 
 </FrameLayout>

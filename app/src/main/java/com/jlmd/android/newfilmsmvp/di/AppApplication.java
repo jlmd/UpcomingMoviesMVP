@@ -11,6 +11,7 @@ import dagger.ObjectGraph;
  * @author jlmd
  */
 public class AppApplication extends Application {
+
     private ObjectGraph objectGraph;
 
     @Override
@@ -18,10 +19,6 @@ public class AppApplication extends Application {
         super.onCreate();
         injectDependencies();
     }
-//
-//    public static AppApplication getApplicationContext(Context context) {
-//        return (AppApplication) context.getApplicationContext();
-//    }
 
     private void injectDependencies() {
         objectGraph = ObjectGraph.create(new RootModule(this));

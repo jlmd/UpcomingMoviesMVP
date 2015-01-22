@@ -9,11 +9,13 @@ import java.io.InputStream;
  * @author jlmd
  */
 public class Utils {
-    private Utils() {}
+
+    private Utils() {
+        // Empty constructor
+    }
 
     public static String loadJSONFromAsset(final Context context, final String fileName) {
         String json;
-
         try {
             InputStream is = context.getAssets().open(fileName);
             int size = is.available();
@@ -27,7 +29,6 @@ public class Utils {
             ex.printStackTrace();
             return null;
         }
-
         return json;
     }
 }

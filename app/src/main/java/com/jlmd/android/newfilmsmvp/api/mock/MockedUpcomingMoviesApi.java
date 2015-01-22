@@ -19,39 +19,35 @@ import java.util.List;
  */
 public class MockedUpcomingMoviesApi implements UpcomingMoviesApi {
 
-    private Gson gson;
     private final Mapper upcomingMoviesApiMapper;
     private final Context context;
-    private static final String FILE_NAME = "mock/upcoming/upcomingmovies.json";
+    private final Gson gson;
+    private static final String FILE_PATH = "mock/upcoming/";
+    private static final String FILE_NAME = "upcomingmovies.json";
+    private static final int LOAD_DELAY_TIME = 1000;
 
     public MockedUpcomingMoviesApi(Context context,
-                                   Mapper upcomingMoviesApiMapper) {
+                                   Mapper upcomingMoviesApiMapper, Gson gson) {
         this.context = context;
         this.upcomingMoviesApiMapper = upcomingMoviesApiMapper;
-        initGson();
-    }
-
-    private void initGson() {
-        gson = new Gson();
+        this.gson = gson;
     }
 
     @Override
     public void getUpcomingMovies(Callback callback) {
-        loadMockedMoviesDelayed(callback, 1000);
+        loadMockedMoviesDelayed(callback, LOAD_DELAY_TIME);
     }
 
     private void loadMockedMoviesDelayed(final Callback callback, int delay) {
         Handler handler = new Handler();
-
         Runnable runnable = new Runnable() {
             public void run() {
-                String json = Utils.loadJSONFromAsset(context, FILE_NAME);
+                String json = Utils.loadJSONFromAsset(context, FILE_PATH + FILE_NAME);
                 List<Movie> movies = (List<Movie>) upcomingMoviesApiMapper.
                         map(gson.fromJson(json, UpcomingMoviesResult.class));
                 callback.onFinish(movies);
             }
         };
-
         handler.postDelayed(runnable, delay);
     }
 

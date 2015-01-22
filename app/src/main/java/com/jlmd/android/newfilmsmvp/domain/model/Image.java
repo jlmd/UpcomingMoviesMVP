@@ -7,6 +7,7 @@ import android.os.Parcelable;
  * @author jlmd
  */
 public class Image implements Parcelable {
+
     private String lowResolutionImgUrl;
     private String mediumResolutionImgUrl;
     private String highResolutionImgUrl;
@@ -44,8 +45,6 @@ public class Image implements Parcelable {
     public void setHighResolutionImgUrl(String highResolutionImgUrl) {
         this.highResolutionImgUrl = highResolutionImgUrl;
     }
-
-
 
     @Override
     public int describeContents() {

@@ -23,6 +23,7 @@ public class RetrofitMovieDetailsApi implements MovieDetailsApi {
     }
 
     private void initRestAdapter() {
+        // TODO Inject
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(BASE_URL)
                 .build();

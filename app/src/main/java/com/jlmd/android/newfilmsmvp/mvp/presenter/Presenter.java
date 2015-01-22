@@ -3,7 +3,7 @@ package com.jlmd.android.newfilmsmvp.mvp.presenter;
 import com.jlmd.android.newfilmsmvp.mvp.view.View;
 
 /**
- * The presenter contains the lifecycle of the view
+ * Presenter contains the lifecycle of the view
  *
  * @author jlmd
  */
