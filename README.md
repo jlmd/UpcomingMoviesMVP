@@ -1,5 +1,5 @@
  Upcoming movies MVP
- ==
+=========
  
  Project created for autolearning where I try to apply the new **Material Design** and Android good practises to develop a **MVP (Model View Presenter)** application using a mocked list of **upcoming movies** as the domain of the application.
  
@@ -11,7 +11,6 @@ After see the MVP implementations of:
 - [EffectiveAndroidUI](https://github.com/pedrovgs/EffectiveAndroidUI) by [pedrovgs](https://github.com/pedrovgs)
 
 I decided to make my own implenentation using these two projects as reference.
-
  
 Libraries used
 ----
@@ -22,7 +21,6 @@ Libraries used
 - [FloatingActionButton](https://github.com/makovkastar/FloatingActionButton)
 - [Picasso](http://square.github.io/picasso/)
 - [Otto](http://square.github.io/otto/)
-
 
 Screenshots
 ----
@@ -37,7 +35,6 @@ José Luis Martín - <joseluis.martind@gmail.com>
 
 * [LinkedIn](http://es.linkedin.com/in/jlmartind)
 * [Twitter](https://twitter.com/jlmartind)
-
 
 License
 ----
