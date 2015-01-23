@@ -1,7 +1,7 @@
  Upcoming movies MVP
 =========
  
- Project created for autolearning where I try to apply the new **Material Design** and Android good practises to develop a **MVP (Model View Presenter)** application using a mocked list of **upcoming movies** as the domain of the application.
+ Project created for autolearning where I try to apply the new **Material Design** and Android good practices to develop a **MVP (Model View Presenter)** application using a mocked list of **upcoming movies** as the domain of the application.
  
 Motivation
 ----
