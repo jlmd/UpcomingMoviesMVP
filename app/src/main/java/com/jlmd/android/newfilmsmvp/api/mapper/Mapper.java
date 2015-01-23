@@ -3,7 +3,7 @@ package com.jlmd.android.newfilmsmvp.api.mapper;
 /**
  * @author jlmd
  */
-public interface Mapper<From, To> {
+public interface Mapper<TFrom, TTo> {
 
-    To map(From from);
+    TTo map(TFrom from);
 }

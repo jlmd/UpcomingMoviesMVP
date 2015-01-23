@@ -10,7 +10,6 @@ import com.jlmd.android.newfilmsmvp.api.moviedetails.model.MovieDetailsResult;
 import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
 import com.jlmd.android.newfilmsmvp.utils.Utils;
 
-
 /**
  * @author jlmd
  */

@@ -2,10 +2,9 @@ package com.jlmd.android.newfilmsmvp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.jlmd.android.newfilmsmvp.R;
-import com.jlmd.android.newfilmsmvp.bus.event.ItemSelectedEvent;
+import com.jlmd.android.newfilmsmvp.bus.event.MovieSelectedEvent;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.utils.Constants;
 
@@ -49,7 +48,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @Subscribe
-    public void onItemSelectedEvent(ItemSelectedEvent event) {
+    public void onItemSelectedEvent(MovieSelectedEvent event) {
         launchMovieDetailsActivity(event.getMovie());
     }
 

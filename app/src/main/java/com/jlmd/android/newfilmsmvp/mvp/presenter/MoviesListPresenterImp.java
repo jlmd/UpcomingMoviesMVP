@@ -3,9 +3,7 @@ package com.jlmd.android.newfilmsmvp.mvp.presenter;
 import android.util.Log;
 
 import com.jlmd.android.newfilmsmvp.api.upcomingmovies.UpcomingMoviesApi;
-import com.jlmd.android.newfilmsmvp.bus.event.ItemSelectedEvent;
-import com.jlmd.android.newfilmsmvp.domain.comparator.MovieDateComparator;
-import com.jlmd.android.newfilmsmvp.domain.comparator.MovieTitleComparator;
+import com.jlmd.android.newfilmsmvp.bus.event.MovieSelectedEvent;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.squareup.otto.Bus;
 
@@ -77,7 +75,7 @@ public class MoviesListPresenterImp extends MoviesListPresenter {
 
     @Override
     public void onItemSelected(int position) {
-        bus.post(new ItemSelectedEvent(movies.get(position)));
+        bus.post(new MovieSelectedEvent(movies.get(position)));
     }
 
     private void loadMovies() {

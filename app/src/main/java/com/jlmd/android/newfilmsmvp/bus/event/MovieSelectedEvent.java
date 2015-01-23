@@ -5,11 +5,11 @@ import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 /**
  * @author jlmd
  */
-public class ItemSelectedEvent {
+public class MovieSelectedEvent {
 
     private final Movie movie;
 
-    public ItemSelectedEvent(Movie movie) {
+    public MovieSelectedEvent(Movie movie) {
         this.movie = movie;
     }
 
