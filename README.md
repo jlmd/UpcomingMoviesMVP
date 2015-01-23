@@ -1,4 +1,5 @@
- # Upcoming movies MVP
+ Upcoming movies MVP
+ ==
  
  Project created for autolearning where I try to apply the new **Material Design** and Android good practises to develop a **MVP (Model View Presenter)** application using a mocked list of **upcoming movies** as the domain of the application.
  
@@ -26,9 +27,16 @@ Libraries used
 Screenshots
 ----
 ![screenshot](./art/screenshot1.png "Screenshot 1") 
-![screenshot](./img/screenshot2.png "Screenshot 2")
+![screenshot](./art/screenshot2.png "Screenshot 2")
 
-![screenshot](./img/screenshot3.png "Screenshot 3")
+![screenshot](./art/screenshot3.png "Screenshot 3")
+
+Developer by
+---
+José Luis Martín - <joseluis.martind@gmail.com>
+
+* [LinkedIn](http://es.linkedin.com/in/jlmartind)
+* [Twitter](https://twitter.com/jlmartind)
 
 
 License
