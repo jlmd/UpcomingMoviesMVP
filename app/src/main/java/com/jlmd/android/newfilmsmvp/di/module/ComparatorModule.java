@@ -20,6 +20,7 @@ import dagger.Provides;
         library = true
 )
 public class ComparatorModule {
+
     @Provides
     @Named("date")
     @Singleton

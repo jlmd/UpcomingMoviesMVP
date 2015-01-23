@@ -11,7 +11,7 @@ import java.io.InputStream;
 public class Utils {
 
     private Utils() {
-        // Empty constructor
+        // Empty private constructor
     }
 
     public static String loadJSONFromAsset(final Context context, final String fileName) {

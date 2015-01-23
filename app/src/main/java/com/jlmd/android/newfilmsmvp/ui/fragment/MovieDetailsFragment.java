@@ -2,10 +2,6 @@ package com.jlmd.android.newfilmsmvp.ui.fragment;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,24 +9,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jlmd.android.newfilmsmvp.R;
+import com.jlmd.android.newfilmsmvp.domain.formatter.GenresFormatter;
 import com.jlmd.android.newfilmsmvp.domain.model.Image;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
 import com.jlmd.android.newfilmsmvp.mvp.presenter.MovieDetailsPresenter;
-import com.jlmd.android.newfilmsmvp.mvp.presenter.MoviesListPresenter;
 import com.jlmd.android.newfilmsmvp.mvp.view.MovieDetailsView;
-import com.jlmd.android.newfilmsmvp.mvp.view.MoviesListView;
-import com.jlmd.android.newfilmsmvp.ui.adapter.MoviesListRecyclerAdapter;
 import com.jlmd.android.newfilmsmvp.utils.Constants;
-import com.melnykov.fab.FloatingActionButton;
 import com.squareup.picasso.Picasso;
-
-import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.InjectView;
-import butterknife.OnClick;
 
 /**
  * @author jlmd
@@ -97,8 +87,7 @@ public class MovieDetailsFragment extends BaseFragment implements MovieDetailsVi
             .load(getImageUrl(movieDetails.getMovie().getBackdropImage()))
             .into(ivBackDrop);
         tvTitle.setText(movieDetails.getMovie().getTitle());
-        // TODO Create a formatter/parser for this
-        tvGenres.setText(TextUtils.join(", ", movieDetails.getGenres()));
+        tvGenres.setText(new GenresFormatter().format(movieDetails.getGenres()));
         tvDescription.setText(movieDetails.getMovie().getOverview());
     }
 

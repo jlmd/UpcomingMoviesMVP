@@ -2,15 +2,14 @@ package com.jlmd.android.newfilmsmvp.di.module;
 
 import android.content.Context;
 
+import com.google.gson.Gson;
+import com.jlmd.android.newfilmsmvp.api.mapper.Mapper;
 import com.jlmd.android.newfilmsmvp.api.mapper.MovieDetailsMapper;
 import com.jlmd.android.newfilmsmvp.api.mapper.UpcomingMoviesMapper;
 import com.jlmd.android.newfilmsmvp.api.mock.MockedMovieDetailsApi;
 import com.jlmd.android.newfilmsmvp.api.mock.MockedUpcomingMoviesApi;
 import com.jlmd.android.newfilmsmvp.api.moviedetails.MovieDetailsApi;
-import com.jlmd.android.newfilmsmvp.api.retrofit.moviedetails.RetrofitMovieDetailsApi;
-import com.jlmd.android.newfilmsmvp.api.retrofit.upcomingmovies.RetrofitUpcomingMoviesApi;
 import com.jlmd.android.newfilmsmvp.api.upcomingmovies.UpcomingMoviesApi;
-import com.jlmd.android.newfilmsmvp.api.mapper.Mapper;
 
 import javax.inject.Named;
 import javax.inject.Singleton;
@@ -43,17 +42,24 @@ public class RepositoryModule {
 
     @Provides
     @Singleton
+    public Gson providesGson() {
+        return new Gson();
+    }
+
+    @Provides
+    @Singleton
     public UpcomingMoviesApi providesUpcomingMoviesApi(Context appContext,
                                                        @Named("upcomingmovies")
-                                                           final Mapper mapper) {
-        return new MockedUpcomingMoviesApi(appContext, mapper);
+                                                       final Mapper mapper, Gson gson) {
+        return new MockedUpcomingMoviesApi(appContext, mapper, gson);
     }
 
     @Provides
     @Singleton
     public MovieDetailsApi providesMovieDetailsApi(Context appContext,
-                                                   @Named("moviedetails") final Mapper mapper) {
-        return new MockedMovieDetailsApi(appContext, mapper);
+                                                   @Named("moviedetails") final Mapper mapper,
+                                                   Gson gson) {
+        return new MockedMovieDetailsApi(appContext, mapper, gson);
     }
 
 }

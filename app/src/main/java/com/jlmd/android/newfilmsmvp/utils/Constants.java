@@ -6,7 +6,7 @@ package com.jlmd.android.newfilmsmvp.utils;
 public class Constants {
 
     private Constants() {
-        // Empty constructor
+        // Empty private constructor
     }
 
     public static final String KEY_MOVIE_DETAILS = "MovieDetails";

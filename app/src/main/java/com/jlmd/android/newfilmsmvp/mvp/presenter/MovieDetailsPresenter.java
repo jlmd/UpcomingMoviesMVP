@@ -7,5 +7,6 @@ import com.jlmd.android.newfilmsmvp.mvp.view.MovieDetailsView;
  * @author jlmd
  */
 public abstract class MovieDetailsPresenter extends Presenter<MovieDetailsView> {
+
     public abstract void onMovieReceive(Movie movie);
 }

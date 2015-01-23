@@ -19,8 +19,8 @@ import java.util.List;
 public class MoviesListPresenterImp extends MoviesListPresenter {
 
     private UpcomingMoviesApi upcomingMoviesApi;
-    private boolean sortedByTitle;
     private List<Movie> movies = Collections.emptyList();
+    private boolean sortedByTitle;
     private final Bus bus;
     private final Comparator<Movie> movieDateComparator;
     private final Comparator<Movie> movieTitleComparator;
@@ -92,7 +92,6 @@ public class MoviesListPresenterImp extends MoviesListPresenter {
 
             @Override
             public void onError(String errorMessage) {
-                // TODO Show error message in view
                 Log.i(TAG, "Error: " + errorMessage);
                 view.hideLoading();
             }

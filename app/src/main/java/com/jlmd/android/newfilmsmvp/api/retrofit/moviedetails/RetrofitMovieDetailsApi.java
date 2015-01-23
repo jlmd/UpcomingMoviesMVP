@@ -23,7 +23,6 @@ public class RetrofitMovieDetailsApi implements MovieDetailsApi {
     }
 
     private void initRestAdapter() {
-        // TODO Inject
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setEndpoint(BASE_URL)
                 .build();
@@ -38,7 +37,8 @@ public class RetrofitMovieDetailsApi implements MovieDetailsApi {
                     @Override
                     public void success(MovieDetailsResult upcomingMoviesResults,
                                         Response response) {
-                        callback.onFinish((MovieDetails) movieDetailsMapper.map(upcomingMoviesResults));
+                        callback.onFinish((MovieDetails) movieDetailsMapper
+                                .map(upcomingMoviesResults));
                     }
 
                     @Override

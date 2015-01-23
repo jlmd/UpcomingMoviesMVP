@@ -35,8 +35,8 @@ import dagger.Provides;
         },
         library = true
 )
-
 public class RootModule {
+
     private final Context context;
 
     public RootModule(Context context) {

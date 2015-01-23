@@ -25,6 +25,7 @@ import dagger.Provides;
         library = true
 )
 public class PresenterModule {
+
     @Provides
     @Singleton
     MoviesListPresenter providesMoviesListPresenter(UpcomingMoviesApi upcomingMoviesApi,

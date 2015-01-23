@@ -54,7 +54,6 @@ public class MovieDetailsPresenterImp extends MovieDetailsPresenter {
 
             @Override
             public void onError(String errorMessage) {
-                // TODO Show error message in view
                 Log.i(TAG, "Error: " + errorMessage);
                 view.hideLoading();
             }

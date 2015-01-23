@@ -7,12 +7,15 @@ import com.jlmd.android.newfilmsmvp.R;
 import com.jlmd.android.newfilmsmvp.bus.event.ItemSelectedEvent;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.jlmd.android.newfilmsmvp.utils.Constants;
+
 import com.squareup.otto.Bus;
 import com.squareup.otto.Subscribe;
 
 import javax.inject.Inject;
 
-
+/**
+ * @author jlmd
+ */
 public class MainActivity extends BaseActivity {
 
     @Inject

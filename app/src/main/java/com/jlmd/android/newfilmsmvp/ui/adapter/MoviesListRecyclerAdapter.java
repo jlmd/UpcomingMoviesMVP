@@ -2,7 +2,6 @@ package com.jlmd.android.newfilmsmvp.ui.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.jlmd.android.newfilmsmvp.R;
+import com.jlmd.android.newfilmsmvp.domain.formatter.RatingFormatter;
+import com.jlmd.android.newfilmsmvp.domain.formatter.ReleaseDateFormatter;
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
 import com.squareup.picasso.Picasso;
 
@@ -26,9 +27,6 @@ public class MoviesListRecyclerAdapter extends RecyclerView.Adapter<MoviesListRe
 
     private List<Movie> movies = Collections.emptyList();
     private final Context context;
-    private static final String RELEASE_DATE_FORMAT = "dd-MM-yyyy";
-    private static final String RATING_SEPARATOR = "/";
-    private static final String RATING_MAX_VALUE = "10";
 
     public MoviesListRecyclerAdapter(Context context) {
         this.context = context;
@@ -60,11 +58,11 @@ public class MoviesListRecyclerAdapter extends RecyclerView.Adapter<MoviesListRe
     private void renderMovieView(Movie movie, ViewHolder viewHolder) {
         String posterImage;
 
-        if (!isLandscape(viewHolder)) {
-            posterImage = movie.getPosterImage().getLowResolutionImgUrl();
-        } else {
+        if (isLandscape(viewHolder)) {
             posterImage = movie.getPosterImage().getMediumResolutionImgUrl();
             viewHolder.tvSummary.setText(movie.getOverview());
+        } else {
+            posterImage = movie.getPosterImage().getLowResolutionImgUrl();
         }
 
         Picasso.with(context)
@@ -72,13 +70,12 @@ public class MoviesListRecyclerAdapter extends RecyclerView.Adapter<MoviesListRe
                 .into(viewHolder.ivPosterImage);
 
         if (movie.getVoteCount() > 0) {
-            viewHolder.tvMovieRating.setText(movie.getVoteAverage() + RATING_SEPARATOR +
-                    RATING_MAX_VALUE);
+            viewHolder.tvMovieRating.setText(new RatingFormatter().format(movie.getVoteAverage()));
         }
 
         viewHolder.tvMovieTitle.setText(movie.getTitle());
-        viewHolder.movieReleaseDate.setText(DateFormat.format(RELEASE_DATE_FORMAT,
-                movie.getReleaseDate()).toString());
+        viewHolder.movieReleaseDate.setText(new ReleaseDateFormatter()
+                .format(movie.getReleaseDate()));
     }
 
     private boolean isLandscape(ViewHolder viewHolder) {
@@ -88,16 +85,12 @@ public class MoviesListRecyclerAdapter extends RecyclerView.Adapter<MoviesListRe
     public class ViewHolder extends BaseRecyclerViewHolder {
         @InjectView(R.id.iv_poster_image)
         protected ImageView ivPosterImage;
-
         @InjectView(R.id.tv_movie_title)
         protected TextView tvMovieTitle;
-
         @InjectView(R.id.tv_movie_rating)
         protected TextView tvMovieRating;
-
         @InjectView(R.id.tv_movie_release_date)
         protected TextView movieReleaseDate;
-
         @Optional
         @InjectView(R.id.tv_overview)
         protected TextView tvSummary;
