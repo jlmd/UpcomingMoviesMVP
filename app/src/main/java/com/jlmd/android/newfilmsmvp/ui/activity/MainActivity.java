@@ -2,6 +2,7 @@ package com.jlmd.android.newfilmsmvp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.jlmd.android.newfilmsmvp.R;
 import com.jlmd.android.newfilmsmvp.bus.event.ItemSelectedEvent;
@@ -25,12 +26,26 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         registerBus();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unRegisterBus();
     }
 
     private void registerBus() {
         bus.register(this);
+    }
+
+    private void unRegisterBus() {
+        bus.unregister(this);
     }
 
     @Subscribe
@@ -44,4 +59,5 @@ public class MainActivity extends BaseActivity {
         detailsActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(detailsActivityIntent);
     }
+
 }

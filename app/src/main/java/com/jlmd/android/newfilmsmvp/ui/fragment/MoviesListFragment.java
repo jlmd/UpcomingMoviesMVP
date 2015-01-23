@@ -47,15 +47,6 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
         initPresenter();
     }
 
-    private void initPresenter() {
-        moviesListPresenter.setView(this);
-        moviesListPresenter.initialize();
-    }
-
-    private void attachSortButtonToRecycler() {
-        sortButton.attachToRecyclerView(moviesListView);
-    }
-
     private void initMoviesRecyclerView() {
         moviesListView.setLayoutManager(new LinearLayoutManager(getActivity()
                 .getApplicationContext()));
@@ -68,6 +59,15 @@ public class MoviesListFragment extends BaseFragment implements MoviesListView {
                 moviesListPresenter.onItemSelected(position);
             }
         });
+    }
+
+    private void attachSortButtonToRecycler() {
+        sortButton.attachToRecyclerView(moviesListView);
+    }
+
+    private void initPresenter() {
+        moviesListPresenter.setView(this);
+        moviesListPresenter.initialize();
     }
 
     @OnClick(R.id.btn_sort_items)
