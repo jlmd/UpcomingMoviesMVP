@@ -29,7 +29,7 @@ Screenshots
 
 ![screenshot](./art/screenshot3.png "Screenshot 3")
 
-Developer by
+Developed by
 ---
 José Luis Martín - <joseluis.martind@gmail.com>
 
