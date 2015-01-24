@@ -33,7 +33,7 @@ Developed by
 ---
 José Luis Martín - <joseluis.martind@gmail.com>
 
-* [LinkedIn](http://es.linkedin.com/in/jlmartind)
+* [LinkedIn](https://www.linkedin.com/in/jlmartind)
 * [Twitter](https://twitter.com/jlmartind)
 
 License
