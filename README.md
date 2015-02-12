@@ -1,6 +1,7 @@
  Upcoming movies MVP
 =========
 
+[![Build Status](https://travis-ci.org/jlmd/UpcomingMoviesMVP.svg?branch=master)](https://travis-ci.org/jlmd/UpcomingMoviesMVP)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-UpcomingMoviesMVP-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/1516)
  
  Project created for autolearning where I try to apply the new **Material Design** and Android good practices to develop a **MVP (Model View Presenter)** application using a mocked list of **upcoming movies** as the domain of the application.
