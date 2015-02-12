@@ -17,8 +17,8 @@ I decided to make my own implenentation using these two projects as reference.
 Libraries used
 ----
 
-- [Dagger](http://square.github.io/retrofit/)
-- [Retrofit](http://square.github.io/dagger/)
+- [Dagger](http://square.github.io/dagger/)
+- [Retrofit](http://square.github.io/retrofit/)
 - [ButterKnife](http://jakewharton.github.io/butterknife/)
 - [FloatingActionButton](https://github.com/makovkastar/FloatingActionButton)
 - [Picasso](http://square.github.io/picasso/)
