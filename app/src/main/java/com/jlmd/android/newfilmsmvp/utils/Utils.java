@@ -14,9 +14,10 @@ public class Utils {
         // Empty private constructor
     }
 
-    public static String loadJSONFromAsset(final Context context, final String fileName) {
+    public static String loadJSONFromAsset(final Context context, final String fileName)
+        throws IOException {
         String json;
-        try {
+
             InputStream is = context.getAssets().open(fileName);
             int size = is.available();
             byte[] buffer = new byte[size];
@@ -25,10 +26,7 @@ public class Utils {
             is.close();
 
             json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
+
         return json;
     }
 }

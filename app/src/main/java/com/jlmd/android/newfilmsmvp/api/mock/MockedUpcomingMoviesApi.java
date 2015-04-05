@@ -42,10 +42,14 @@ public class MockedUpcomingMoviesApi implements UpcomingMoviesApi {
         Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             public void run() {
-                String json = Utils.loadJSONFromAsset(context, FILE_PATH + FILE_NAME);
-                List<Movie> movies = (List<Movie>) upcomingMoviesApiMapper.
+                try {
+                    String json = Utils.loadJSONFromAsset(context, FILE_PATH + FILE_NAME);
+                    List<Movie> movies = (List<Movie>) upcomingMoviesApiMapper.
                         map(gson.fromJson(json, UpcomingMoviesResult.class));
-                callback.onFinish(movies);
+                    callback.onFinish(movies);
+                } catch (IOException e) {
+                    callback.onError(e.getMessage());
+                }
             }
         };
         handler.postDelayed(runnable, delay);

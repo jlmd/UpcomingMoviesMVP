@@ -2,13 +2,13 @@ package com.jlmd.android.newfilmsmvp.api.mock;
 
 import android.content.Context;
 import android.os.Handler;
-
 import com.google.gson.Gson;
 import com.jlmd.android.newfilmsmvp.api.mapper.Mapper;
 import com.jlmd.android.newfilmsmvp.api.moviedetails.MovieDetailsApi;
 import com.jlmd.android.newfilmsmvp.api.moviedetails.model.MovieDetailsResult;
 import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
 import com.jlmd.android.newfilmsmvp.utils.Utils;
+import java.io.IOException;
 
 /**
  * @author jlmd
@@ -37,10 +37,14 @@ public class MockedMovieDetailsApi implements MovieDetailsApi {
         Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             public void run() {
-                String json = Utils.loadJSONFromAsset(context, FILE_PATH + movieId + ".json");
-                MovieDetails movieDetails = (MovieDetails) movieDetailsMapper.
+                try{
+                    String json = Utils.loadJSONFromAsset(context, FILE_PATH + movieId + ".json");
+                    MovieDetails movieDetails = (MovieDetails) movieDetailsMapper.
                         map(gson.fromJson(json, MovieDetailsResult.class));
-                callback.onFinish(movieDetails);
+                    callback.onFinish(movieDetails);
+                } catch (IOException e) {
+                    callback.onError(e.getMessage());
+                }
             }
         };
         handler.postDelayed(runnable, delay);
