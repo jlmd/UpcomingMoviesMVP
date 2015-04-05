@@ -1,6 +1,7 @@
 package com.jlmd.android.newfilmsmvp.utils;
 
 import android.content.Context;
+
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -9,23 +10,23 @@ import java.io.InputStream;
  */
 public class Utils {
 
-  private Utils() {
-    // Empty private constructor
-  }
+    private Utils() {
+        // Empty private constructor
+    }
 
-  public static String loadJSONFromAsset(final Context context, final String fileName)
-      throws IOException {
-    String json;
+    public static String loadJSONFromAsset(final Context context, final String fileName)
+        throws IOException {
+        String json;
 
-    InputStream is = context.getAssets().open(fileName);
-    int size = is.available();
-    byte[] buffer = new byte[size];
+            InputStream is = context.getAssets().open(fileName);
+            int size = is.available();
+            byte[] buffer = new byte[size];
 
-    is.read(buffer);
-    is.close();
+            is.read(buffer);
+            is.close();
 
-    json = new String(buffer, "UTF-8");
+            json = new String(buffer, "UTF-8");
 
-    return json;
-  }
+        return json;
+    }
 }
