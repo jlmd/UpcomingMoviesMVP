@@ -1,10 +1,7 @@
 package com.jlmd.android.newfilmsmvp.di;
 
 import android.app.Application;
-import android.content.Context;
-
 import com.jlmd.android.newfilmsmvp.di.module.RootModule;
-
 import dagger.ObjectGraph;
 
 /**
@@ -12,20 +9,20 @@ import dagger.ObjectGraph;
  */
 public class AppApplication extends Application {
 
-    private ObjectGraph objectGraph;
+  private ObjectGraph objectGraph;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        injectDependencies();
-    }
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    injectDependencies();
+  }
 
-    private void injectDependencies() {
-        objectGraph = ObjectGraph.create(new RootModule(this));
-        objectGraph.inject(this);
-    }
+  private void injectDependencies() {
+    objectGraph = ObjectGraph.create(new RootModule(this));
+    objectGraph.inject(this);
+  }
 
-    public void inject(Object object) {
-        objectGraph.inject(object);
-    }
+  public void inject(Object object) {
+    objectGraph.inject(object);
+  }
 }

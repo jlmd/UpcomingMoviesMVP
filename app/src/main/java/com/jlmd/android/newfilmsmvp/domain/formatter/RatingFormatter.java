@@ -5,12 +5,11 @@ package com.jlmd.android.newfilmsmvp.domain.formatter;
  */
 public class RatingFormatter implements Formatter<Double> {
 
-    private static final String RATING_SEPARATOR = "/";
-    private static final String RATING_MAX_VALUE = "10";
+  private static final String RATING_SEPARATOR = "/";
+  private static final String RATING_MAX_VALUE = "10";
 
-    @Override
-    public String format(Double value) {
-        return value + RATING_SEPARATOR + RATING_MAX_VALUE;
-    }
-
+  @Override
+  public String format(Double value) {
+    return value + RATING_SEPARATOR + RATING_MAX_VALUE;
+  }
 }

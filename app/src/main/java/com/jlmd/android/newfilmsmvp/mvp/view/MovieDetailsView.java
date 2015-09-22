@@ -7,9 +7,9 @@ import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
  */
 public interface MovieDetailsView extends View {
 
-    void showLoading();
+  void showLoading();
 
-    void hideLoading();
+  void hideLoading();
 
-    void renderMovie(final MovieDetails movieDetails);
+  void renderMovie(final MovieDetails movieDetails);
 }

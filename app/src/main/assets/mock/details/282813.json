@@ -1,48 +1,48 @@
 {
-    "adult": false,
-    "backdrop_path": "/np7xRKpXUJXYPiNmm1qP6rwUFfP.jpg",
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-        {
-            "id": 27,
-            "name": "Horror"
-        }
-    ],
-    "homepage": "",
-    "id": 282813,
-    "imdb_id": "tt2799166",
-    "original_title": "The Pyramid",
-    "popularity": 0.5396735492458,
-    "poster_path": "/v6dkYHuT3UgzlBMU0aCnHqz4dAo.jpg",
-    "production_companies": [
-        {
-            "name": "20th Century Pictures",
-            "id": 4985
-        },
-        {
-            "name": "Fox International Productions",
-            "id": 7485
-        }
-    ],
-    "production_countries": [
-        {
-            "iso_3166_1": "US",
-            "name": "United States of America"
-        }
-    ],
-    "release_date": "2014-12-05",
-    "revenue": 0,
-    "runtime": 89,
-    "spoken_languages": [
-        {
-            "iso_639_1": "en",
-            "name": "English"
-        }
-    ],
-    "status": "Released",
-    "tagline": "You Only Enter Once",
-    "title": "The Pyramid",
-    "vote_average": 4.2,
-    "vote_count": 5
+  "adult": false,
+  "backdrop_path": "/np7xRKpXUJXYPiNmm1qP6rwUFfP.jpg",
+  "belongs_to_collection": null,
+  "budget": 0,
+  "genres": [
+    {
+      "id": 27,
+      "name": "Horror"
+    }
+  ],
+  "homepage": "",
+  "id": 282813,
+  "imdb_id": "tt2799166",
+  "original_title": "The Pyramid",
+  "popularity": 0.5396735492458,
+  "poster_path": "/v6dkYHuT3UgzlBMU0aCnHqz4dAo.jpg",
+  "production_companies": [
+    {
+      "name": "20th Century Pictures",
+      "id": 4985
+    },
+    {
+      "name": "Fox International Productions",
+      "id": 7485
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2014-12-05",
+  "revenue": 0,
+  "runtime": 89,
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "You Only Enter Once",
+  "title": "The Pyramid",
+  "vote_average": 4.2,
+  "vote_count": 5
 }

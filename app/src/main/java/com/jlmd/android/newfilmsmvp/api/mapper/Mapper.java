@@ -5,5 +5,5 @@ package com.jlmd.android.newfilmsmvp.api.mapper;
  */
 public interface Mapper<TFrom, TTo> {
 
-    TTo map(TFrom from);
+  TTo map(TFrom from);
 }

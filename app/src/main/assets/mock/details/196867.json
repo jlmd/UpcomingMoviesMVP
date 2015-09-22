@@ -1,56 +1,56 @@
 {
-    "adult": false,
-    "backdrop_path": "/kgZJ4iKOfzc1RTbBbTB5fbhLvi3.jpg",
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-        {
-            "id": 35,
-            "name": "Comedy"
-        },
-        {
-            "id": 18,
-            "name": "Drama"
-        },
-        {
-            "id": 10402,
-            "name": "Music"
-        }
-    ],
-    "homepage": "",
-    "id": 196867,
-    "imdb_id": "tt1823664",
-    "original_title": "Annie",
-    "popularity": 1.98429182641756,
-    "poster_path": "/hkvKhuUUgjJ4jrXKkvqoQ5JnQx5.jpg",
-    "production_companies": [
-        {
-            "name": "Overbrook Entertainment",
-            "id": 12485
-        },
-        {
-            "name": "Sony Pictures Entertainment (SPE)",
-            "id": 7431
-        }
-    ],
-    "production_countries": [
-        {
-            "iso_3166_1": "US",
-            "name": "United States of America"
-        }
-    ],
-    "release_date": "2014-12-19",
-    "revenue": 0,
-    "runtime": 119,
-    "spoken_languages": [
-        {
-            "iso_639_1": "en",
-            "name": "English"
-        }
-    ],
-    "status": "Released",
-    "tagline": "",
-    "title": "Annie",
-    "vote_average": 5.9,
-    "vote_count": 7
+  "adult": false,
+  "backdrop_path": "/kgZJ4iKOfzc1RTbBbTB5fbhLvi3.jpg",
+  "belongs_to_collection": null,
+  "budget": 0,
+  "genres": [
+    {
+      "id": 35,
+      "name": "Comedy"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 10402,
+      "name": "Music"
+    }
+  ],
+  "homepage": "",
+  "id": 196867,
+  "imdb_id": "tt1823664",
+  "original_title": "Annie",
+  "popularity": 1.98429182641756,
+  "poster_path": "/hkvKhuUUgjJ4jrXKkvqoQ5JnQx5.jpg",
+  "production_companies": [
+    {
+      "name": "Overbrook Entertainment",
+      "id": 12485
+    },
+    {
+      "name": "Sony Pictures Entertainment (SPE)",
+      "id": 7431
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2014-12-19",
+  "revenue": 0,
+  "runtime": 119,
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "",
+  "title": "Annie",
+  "vote_average": 5.9,
+  "vote_count": 7
 }

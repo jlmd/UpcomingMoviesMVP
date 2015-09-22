@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <fragment
-        android:id="@+id/frg_movies_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.jlmd.android.newfilmsmvp.ui.fragment.MoviesListFragment"/>
+  <fragment
+      android:id="@+id/frg_movies_list"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      class="com.jlmd.android.newfilmsmvp.ui.fragment.MoviesListFragment"/>
 
 </LinearLayout>

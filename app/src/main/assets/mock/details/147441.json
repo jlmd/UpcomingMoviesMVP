@@ -1,64 +1,64 @@
 {
-    "adult": false,
-    "backdrop_path": "/xSHjOvNdx426K9KKSeOQZ8SC479.jpg",
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-        {
-            "id": 28,
-            "name": "Action"
-        },
-        {
-            "id": 12,
-            "name": "Adventure"
-        },
-        {
-            "id": 18,
-            "name": "Drama"
-        }
-    ],
-    "homepage": "",
-    "id": 147441,
-    "imdb_id": "tt1528100",
-    "original_title": "Exodus: Gods and Kings",
-    "popularity": 9.29730330045793,
-    "poster_path": "/gzOIHvB0kWewC3fo91DNvxDOEAU.jpg",
-    "production_companies": [
-        {
-            "name": "Chernin Entertainment",
-            "id": 7076
-        },
-        {
-            "name": "Scott Free Productions",
-            "id": 1645
-        },
-        {
-            "name": "Babieka",
-            "id": 20656
-        }
-    ],
-    "production_countries": [
-        {
-            "iso_3166_1": "GB",
-            "name": "United Kingdom"
-        },
-        {
-            "iso_3166_1": "US",
-            "name": "United States of America"
-        }
-    ],
-    "release_date": "2014-12-12",
-    "revenue": 0,
-    "runtime": 153,
-    "spoken_languages": [
-        {
-            "iso_639_1": "en",
-            "name": "English"
-        }
-    ],
-    "status": "Released",
-    "tagline": "Once brothers, now enemies.",
-    "title": "Exodus: Gods and Kings",
-    "vote_average": 5.9,
-    "vote_count": 40
+  "adult": false,
+  "backdrop_path": "/xSHjOvNdx426K9KKSeOQZ8SC479.jpg",
+  "belongs_to_collection": null,
+  "budget": 0,
+  "genres": [
+    {
+      "id": 28,
+      "name": "Action"
+    },
+    {
+      "id": 12,
+      "name": "Adventure"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "homepage": "",
+  "id": 147441,
+  "imdb_id": "tt1528100",
+  "original_title": "Exodus: Gods and Kings",
+  "popularity": 9.29730330045793,
+  "poster_path": "/gzOIHvB0kWewC3fo91DNvxDOEAU.jpg",
+  "production_companies": [
+    {
+      "name": "Chernin Entertainment",
+      "id": 7076
+    },
+    {
+      "name": "Scott Free Productions",
+      "id": 1645
+    },
+    {
+      "name": "Babieka",
+      "id": 20656
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2014-12-12",
+  "revenue": 0,
+  "runtime": 153,
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Once brothers, now enemies.",
+  "title": "Exodus: Gods and Kings",
+  "vote_average": 5.9,
+  "vote_count": 40
 }

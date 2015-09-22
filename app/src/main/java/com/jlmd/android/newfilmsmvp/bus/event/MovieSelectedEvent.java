@@ -7,13 +7,13 @@ import com.jlmd.android.newfilmsmvp.domain.model.Movie;
  */
 public class MovieSelectedEvent {
 
-    private final Movie movie;
+  private final Movie movie;
 
-    public MovieSelectedEvent(Movie movie) {
-        this.movie = movie;
-    }
+  public MovieSelectedEvent(Movie movie) {
+    this.movie = movie;
+  }
 
-    public Movie getMovie() {
-        return movie;
-    }
+  public Movie getMovie() {
+    return movie;
+  }
 }

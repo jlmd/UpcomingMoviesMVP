@@ -7,15 +7,15 @@ import com.jlmd.android.newfilmsmvp.domain.model.MovieDetails;
  */
 public interface MovieDetailsApi {
 
-    static final String BASE_URL = "https://api.themoviedb.org/3/movie";
-    static final String API_KEY = "XXX";
+  static final String BASE_URL = "https://api.themoviedb.org/3/movie";
+  static final String API_KEY = "XXX";
 
-    void getMovieDetails(int movieId, Callback callback);
+  void getMovieDetails(int movieId, Callback callback);
 
-    public interface Callback {
+  public interface Callback {
 
-        void onFinish(MovieDetails movieDetails);
+    void onFinish(MovieDetails movieDetails);
 
-        void onError(String errorMessage);
-    }
+    void onError(String errorMessage);
+  }
 }

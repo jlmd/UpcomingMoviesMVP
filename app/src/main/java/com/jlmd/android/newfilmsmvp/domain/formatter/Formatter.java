@@ -5,5 +5,5 @@ package com.jlmd.android.newfilmsmvp.domain.formatter;
  */
 public interface Formatter<TFrom> {
 
-    String format(TFrom from);
+  String format(TFrom from);
 }

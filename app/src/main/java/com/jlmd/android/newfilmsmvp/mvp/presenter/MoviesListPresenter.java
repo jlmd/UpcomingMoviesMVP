@@ -7,7 +7,7 @@ import com.jlmd.android.newfilmsmvp.mvp.view.MoviesListView;
  */
 public abstract class MoviesListPresenter extends Presenter<MoviesListView> {
 
-    public abstract void onSortButtonClick();
+  public abstract void onSortButtonClick();
 
-    public abstract void onItemSelected(int position);
+  public abstract void onItemSelected(int position);
 }

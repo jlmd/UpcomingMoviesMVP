@@ -1,44 +1,44 @@
 {
-    "adult": false,
-    "backdrop_path": "/qUVSXOHAYT1hpj1VwgGxH9NwM51.jpg",
-    "belongs_to_collection": null,
-    "budget": 0,
-    "genres": [
-        {
-            "id": 18,
-            "name": "Drama"
-        }
-    ],
-    "homepage": "",
-    "id": 304336,
-    "imdb_id": "tt2392385",
-    "original_title": "Lap Dance",
-    "popularity": 1.60997624479891,
-    "poster_path": "/ys83JbdnzZqbXapXBGKk3U5L71Z.jpg",
-    "production_companies": [
-        {
-            "name": "Imprint Entertainment",
-            "id": 5218
-        }
-    ],
-    "production_countries": [
-        {
-            "iso_3166_1": "US",
-            "name": "United States of America"
-        }
-    ],
-    "release_date": "2014-12-05",
-    "revenue": 0,
-    "runtime": 100,
-    "spoken_languages": [
-        {
-            "iso_639_1": "en",
-            "name": "English"
-        }
-    ],
-    "status": "Released",
-    "tagline": "Fast money comes at a dangerous price",
-    "title": "Lap Dance",
-    "vote_average": 3.3,
-    "vote_count": 4
+  "adult": false,
+  "backdrop_path": "/qUVSXOHAYT1hpj1VwgGxH9NwM51.jpg",
+  "belongs_to_collection": null,
+  "budget": 0,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "homepage": "",
+  "id": 304336,
+  "imdb_id": "tt2392385",
+  "original_title": "Lap Dance",
+  "popularity": 1.60997624479891,
+  "poster_path": "/ys83JbdnzZqbXapXBGKk3U5L71Z.jpg",
+  "production_companies": [
+    {
+      "name": "Imprint Entertainment",
+      "id": 5218
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2014-12-05",
+  "revenue": 0,
+  "runtime": 100,
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Fast money comes at a dangerous price",
+  "title": "Lap Dance",
+  "vote_average": 3.3,
+  "vote_count": 4
 }

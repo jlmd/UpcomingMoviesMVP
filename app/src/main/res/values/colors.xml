@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Upcoming movies view -->
-    <color name="list_title_text_color">#424242</color>
-    <color name="list_rating_color">#BDBDBD</color>
-    <color name="list_release_date_text_color">#FBC02D</color>
-    <color name="list_background_color">#E0E0E0</color>
+  <!-- Upcoming movies view -->
+  <color name="list_title_text_color">#424242</color>
+  <color name="list_rating_color">#BDBDBD</color>
+  <color name="list_release_date_text_color">#FBC02D</color>
+  <color name="list_background_color">#E0E0E0</color>
 
-    <!-- Movie details view -->
-    <color name="movie_title">#424242</color>
-    <color name="movie_genres">#BDBDBD</color>
-    <color name="movie_description">#757575</color>
+  <!-- Movie details view -->
+  <color name="movie_title">#424242</color>
+  <color name="movie_genres">#BDBDBD</color>
+  <color name="movie_description">#757575</color>
 
-    <!-- Order float button -->
-    <color name="float_button_primary">#00C853</color>
-    <color name="float_button_primary_pressed">#388E3C</color>
-    <color name="float_button_ripple">#2E7D32</color>
+  <!-- Order float button -->
+  <color name="float_button_primary">#00C853</color>
+  <color name="float_button_primary_pressed">#388E3C</color>
+  <color name="float_button_ripple">#2E7D32</color>
 
-    <!-- Styling -->
-    <color name="colorPrimary">#4CAF50</color>
-    <color name="colorPrimaryDark">#388E3C</color>
+  <!-- Styling -->
+  <color name="colorPrimary">#4CAF50</color>
+  <color name="colorPrimaryDark">#388E3C</color>
 
 </resources>

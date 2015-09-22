@@ -5,52 +5,52 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_backdrop_image"
+        android:layout_width="match_parent"
+        android:layout_height="203dp"
+        android:scaleType="centerCrop"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="25dp">
 
-        <ImageView
-            android:id="@+id/iv_backdrop_image"
-            android:layout_width="match_parent"
-            android:layout_height="203dp"
-            android:scaleType="centerCrop"/>
+      <TextView
+          android:id="@+id/tv_title"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="25sp"
+          android:textColor="@color/movie_title"
+          android:layout_marginBottom="20dp"
+          tools:text="The Hobbit: The Battle of the Five Armies"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_margin="25dp">
+      <TextView
+          android:id="@+id/tv_genres"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textSize="14sp"
+          android:textColor="@color/movie_title"
+          android:layout_marginBottom="20dp"
+          tools:text="Adventure, Fantasy"/>
 
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="25sp"
-                android:textColor="@color/movie_title"
-                android:layout_marginBottom="20dp"
-                tools:text="The Hobbit: The Battle of the Five Armies"/>
-
-            <TextView
-                android:id="@+id/tv_genres"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/movie_title"
-                android:layout_marginBottom="20dp"
-                tools:text="Adventure, Fantasy"/>
-
-            <TextView
-                android:id="@+id/tv_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:textSize="16sp"
-                android:textColor="@color/movie_description"
-                tools:text="@string/lorem_ipsum"/>
-
-            </LinearLayout>
+      <TextView
+          android:id="@+id/tv_description"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:textSize="16sp"
+          android:textColor="@color/movie_description"
+          tools:text="@string/lorem_ipsum"/>
 
     </LinearLayout>
+
+  </LinearLayout>
 
 </ScrollView>

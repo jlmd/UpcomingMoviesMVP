@@ -1,7 +1,6 @@
 package com.jlmd.android.newfilmsmvp.mvp.view;
 
 import com.jlmd.android.newfilmsmvp.domain.model.Movie;
-
 import java.util.List;
 
 /**
@@ -9,9 +8,9 @@ import java.util.List;
  */
 public interface MoviesListView extends View {
 
-    void showLoading();
+  void showLoading();
 
-    void hideLoading();
+  void hideLoading();
 
-    void renderMovies(final List<Movie> movies);
+  void renderMovies(final List<Movie> movies);
 }

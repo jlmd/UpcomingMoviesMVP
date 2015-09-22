@@ -3,11 +3,11 @@ package com.jlmd.android.newfilmsmvp.utils;
 /**
  * @author jlmd
  */
-public class Constants {
+public final class Constants {
 
-    private Constants() {
-        // Empty private constructor
-    }
+  public static final String KEY_MOVIE_DETAILS = "MovieDetails";
 
-    public static final String KEY_MOVIE_DETAILS = "MovieDetails";
+  private Constants() {
+    // Empty private constructor
+  }
 }
